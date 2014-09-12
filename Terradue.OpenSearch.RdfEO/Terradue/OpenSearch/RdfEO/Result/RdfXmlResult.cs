@@ -17,7 +17,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using System.IO;
 using Terradue.GeoJson.Geometry;
-using Terradue.GeoJson.Geometry.FeatureExtensions;
 
 namespace Terradue.OpenSearch.Result {
 
