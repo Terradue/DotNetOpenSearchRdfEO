@@ -22,7 +22,7 @@ using Terradue.ServiceModel.Syndication;
 using System.Xml.Linq;
 
 [assembly:Addin]
-[assembly:AddinDependency ("OpenSearchEngine", "1.0")]
+[assembly:AddinDependency("OpenSearchEngine", "1.0")]
 namespace Terradue.OpenSearch.Engine.Extensions {
     /// <summary>
     /// Rdf open search engine extension.
@@ -55,7 +55,8 @@ namespace Terradue.OpenSearch.Engine.Extensions {
         }
 
         public override IOpenSearchResultCollection ReadNative(OpenSearchResponse response) {
-            if (response.ContentType == "application/rdf+xml") return TransformRdfResponseToRdfXmlDocument(response);
+            if (response.ContentType == "application/rdf+xml")
+                return TransformRdfResponseToRdfXmlDocument(response);
 
             throw new NotSupportedException("RDF extension does not transform OpenSearch response from " + response.ContentType);
         }
@@ -82,7 +83,8 @@ namespace Terradue.OpenSearch.Engine.Extensions {
 
             SyndicationLink link = rdfDoc.Links.SingleOrDefault(l => l.RelationshipType == "search");
 
-            if (link == null) return null;
+            if (link == null)
+                return null;
             return new OpenSearchUrl(link.Uri);
         }
 
@@ -95,21 +97,13 @@ namespace Terradue.OpenSearch.Engine.Extensions {
         /// <param name="response">Response.</param>
         public static RdfXmlDocument TransformRdfResponseToRdfXmlDocument(OpenSearchResponse response) {
             RdfXmlDocument rdfDoc;
-			
-            try {
 
-                XmlReader reader = XmlReader.Create(response.GetResponseStream());
+            XmlReader reader = XmlReader.Create(response.GetResponseStream());
 
-                rdfDoc = RdfXmlDocument.Load(reader);
+            rdfDoc = RdfXmlDocument.Load(reader);
 
-                rdfDoc.ElementExtensions.Add(new SyndicationElementExtension("queryTime", "http://a9.com/-/spec/opensearch/1.1/",   
-                                        response.RequestTime.Milliseconds.ToString()));
-                
-            } catch (Exception e) {
-                throw new InvalidOperationException("Error during transformation : " + e.Message, e);
-            }
-
-            //RdfOpenSearchEngineExtension.CorrectRdfAbout(rdfDoc);
+            rdfDoc.ElementExtensions.Add(new SyndicationElementExtension("queryTime", "http://a9.com/-/spec/opensearch/1.1/",   
+                                                                             response.RequestTime.Milliseconds.ToString()));
 
             return rdfDoc;
         }

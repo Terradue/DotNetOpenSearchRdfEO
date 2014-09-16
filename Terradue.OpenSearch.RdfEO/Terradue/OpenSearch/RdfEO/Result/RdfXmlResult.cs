@@ -38,9 +38,12 @@ namespace Terradue.OpenSearch.Result {
         public RdfXmlResult(XElement root) : base() {
 
             Id = root.Attribute(XName.Get("about", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")).Value;
-            Title = root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value;
-            Date = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
-            Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
+            if (root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null)
+                Title = root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value;
+            if (root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null)
+                Date = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
+            if (root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null)
+                Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
             elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
         }
 
