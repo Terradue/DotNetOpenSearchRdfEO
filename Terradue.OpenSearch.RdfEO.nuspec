@@ -5,8 +5,8 @@
     <version>1.0.0</version>
     <title>Terradue.OpenSearch.RdfEO</title>
     <authors>Terradue</authors>
-    <projectUrl>https://github.com/Terradue/DotNetOpenSearch</projectUrl>
-    <licenseUrl>https://github.com/Terradue/DotNetOpenSearch/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Terradue/DotNetOpenSearchRdfEO</projectUrl>
+    <licenseUrl>https://github.com/Terradue/DotNetOpenSearchRdfEO/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Terradue.OpenSearch.RdfEO is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for Rdf EO format</description>
     <summary>Rdf Earth Observation plugin for OpenSearch library for .Net</summary>
