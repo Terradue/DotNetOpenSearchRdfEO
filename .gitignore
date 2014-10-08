@@ -5,3 +5,5 @@
 /packages/
 
 /Terradue.OpenSearch.RdfEO.Test/bin/
+
+/Terradue.OpenSearch.RdfEO.Test/obj/
