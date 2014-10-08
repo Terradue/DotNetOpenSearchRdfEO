@@ -103,7 +103,7 @@ namespace Terradue.OpenSearch.Engine.Extensions {
             rdfDoc = RdfXmlDocument.Load(reader);
 
             rdfDoc.ElementExtensions.Add(new SyndicationElementExtension("queryTime", "http://a9.com/-/spec/opensearch/1.1/",   
-                                                                             response.RequestTime.Milliseconds.ToString()));
+                                                                         response.RequestTime.Milliseconds.ToString()));
 
             return rdfDoc;
         }

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#" xmlns:ical="http://www.w3.org/2002/12/cal/ical#" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" xmlns:eop="http://earth.esa.int/eop" xmlns:opt="http://earth.esa.int/opt" xmlns:sar="http://earth.esa.int/sar" xmlns:atm="http://earth.esa.int/atm">
+	<rdf:Description rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf?start=1995-10-11T14:54:10.000Z&amp;stop=1996-10-11T14:55:12.000Z&amp;wrsLongitudeGrid=125&amp;count=20&amp;enableSourceproduct=true">
+		<os:totalResults>6</os:totalResults>
+		<os:startIndex>0</os:startIndex>
+		<os:itemsPerPage>20</os:itemsPerPage>
+		<dc:creator>Terradue CAS version 0.0.0.0</dc:creator>
+		<dc:date>2014-10-08T09:10:00Z</dc:date>
+		<dc:SizeOrDuration>0.053 sec</dc:SizeOrDuration>
+		<atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf?startIndex=0&amp;start=1995-10-11T14:54:10.000Z&amp;stop=1996-10-11T14:55:12.000Z&amp;wrsLongitudeGrid=125" />
+		<atom:link atom:rel="first" atom:type="application/rdf+xml" atom:href="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf?startIndex=0&amp;start=1995-10-11T14:54:10.000Z&amp;stop=1996-10-11T14:55:12.000Z&amp;wrsLongitudeGrid=125" />
+		<atom:link atom:rel="last" atom:type="application/rdf+xml" atom:href="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf?startIndex=0&amp;start=1995-10-11T14:54:10.000Z&amp;stop=1996-10-11T14:55:12.000Z&amp;wrsLongitudeGrid=125" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/description" />
+		<os:Query os:role="request" count="20" time:start="1995-10-11T14:54:10.000Z" time:end="1996-10-11T14:55:12.000Z" eop:wrsLongitudeGrid="125" />
+	</rdf:Description>
+	<dclite4g:Series rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf">
+		<dc:identifier>ICESHEET_CCI_SLC</dc:identifier>
+		<dc:description rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/description/" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:title="Search the ICESHEET_CCI_SLC Series" atom:href="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/description/" />
+		<dc:title>IceSheet CCI Single Look Complex dataset series</dc:title>
+		<dct:abstract>SAR data processed to Single Look Complex with ROI_PAC</dct:abstract>
+		<ical:dtstart>1992-01-01T17:30:40.000Z</ical:dtstart>
+		<ical:dtend>1996-12-20T14:51:52.000Z</ical:dtend>
+		<dct:spatial>POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))</dct:spatial>
+		<dc:format>RAW</dc:format>
+		<dct:created>2014-03-10T09:18:41.079Z</dct:created>
+		<dct:modified>2014-10-08T08:59:54.334Z</dct:modified>
+	</dclite4g:Series>
+	<dclite4g:DataSet rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.slc/rdf">
+		<dc:identifier>SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.slc</dc:identifier>
+		<dclite4g:series rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf" />
+		<dc:relation rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.slc/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://ec2-54-194-152-80-eu-west-1-compute-amazonaws-com-temp/wf_icesheet/0000001-140918121535003-oozie-oozi-W//results/SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.slc.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:wrsLongitudeGrid>125</eop:wrsLongitudeGrid>
+		<ical:dtstart>1996-02-28T14:54:05.000Z</ical:dtstart>
+		<ical:dtend>1996-02-28T14:54:52.000Z</ical:dtend>
+		<eop:processingDate>2014-09-18T14:50:32.000Z</eop:processingDate>
+		<dct:spatial>POLYGON((-46.665838 71.03659,-47.72684318 70.21108375,-47.67778 70.205037,-48.66532502 69.37488182,-48.620551 69.369347,-49.797702 68.301041,-52.318045 68.610104,-51.54586922 69.46063544,-51.554273 69.461662,-51.42416238 69.59469234,-51.325208 69.703688,-51.31838398 69.70284444,-50.72538687 70.30914856,-50.731319 70.309871,-50.63977847 70.39667803,-50.488421 70.551432,-50.47794715 70.55014116,-49.586265 71.395715,-46.665838 71.03659))</dct:spatial>
+		<dclite4g:quicklook rdf:resource="http://cci-ice-velocity.terradue.int/quicklooks/SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.mli.png" />
+		<dct:created>2014-05-08T14:19:43.285Z</dct:created>
+		<dct:dateSubmitted>2014-05-08T14:19:43.285Z</dct:dateSubmitted>
+		<dct:modified>2014-09-18T12:50:33.513Z</dct:modified>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Greenland; Subarctic America; Qaasuitsup Kommunia; Davis Strait; Baffin Bay</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951220_145407_19951220_145454_125_DESCENDING.slc/rdf">
+		<dc:identifier>SAR_SLC_19951220_145407_19951220_145454_125_DESCENDING.slc</dc:identifier>
+		<dclite4g:series rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf" />
+		<dc:relation rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951220_145407_19951220_145454_125_DESCENDING.slc/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://ec2-54-194-152-80-eu-west-1-compute-amazonaws-com-temp/wf_icesheet/0000001-140918121535003-oozie-oozi-W//results/SAR_SLC_19951220_145407_19951220_145454_125_DESCENDING.slc.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:wrsLongitudeGrid>125</eop:wrsLongitudeGrid>
+		<ical:dtstart>1995-12-20T14:54:07.000Z</ical:dtstart>
+		<ical:dtend>1995-12-20T14:54:54.000Z</ical:dtend>
+		<eop:processingDate>2014-09-18T14:33:52.000Z</eop:processingDate>
+		<dct:spatial>POLYGON((-46.62293 71.054689,-47.6864635 70.22940989,-47.637389 70.223356,-48.62724257 69.39338448,-48.579138 69.387432,-49.762221 68.319802,-52.28425 68.629343,-51.51015115 69.47972332,-51.518581 69.480754,-51.38819014 69.61370264,-51.288931 69.722743,-51.28207913 69.72189515,-50.68758647 70.32804952,-50.696976 70.329194,-50.55819107 70.45998318,-50.449977 70.57032,-50.44213534 70.56935264,-49.545404 71.414421,-46.62293 71.054689))</dct:spatial>
+		<dclite4g:quicklook rdf:resource="http://cci-ice-velocity.terradue.int/quicklooks/SAR_SLC_19951220_145407_19951220_145454_125_DESCENDING.mli.png" />
+		<dct:created>2014-03-12T08:54:04.199Z</dct:created>
+		<dct:dateSubmitted>2014-03-12T08:54:04.199Z</dct:dateSubmitted>
+		<dct:modified>2014-09-18T12:33:52.956Z</dct:modified>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Greenland; Subarctic America; Qaasuitsup Kommunia; Davis Strait; Baffin Bay</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951220_145106_19951220_145123_125_DESCENDING.slc/rdf">
+		<dc:identifier>SAR_SLC_19951220_145106_19951220_145123_125_DESCENDING.slc</dc:identifier>
+		<dclite4g:series rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf" />
+		<dc:relation rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951220_145106_19951220_145123_125_DESCENDING.slc/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://ec2-54-194-152-80-eu-west-1-compute-amazonaws-com-temp/wf_icesheet/0000001-140918121535003-oozie-oozi-W//results/SAR_SLC_19951220_145106_19951220_145123_125_DESCENDING.slc.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:wrsLongitudeGrid>125</eop:wrsLongitudeGrid>
+		<ical:dtstart>1995-12-20T14:51:06.000Z</ical:dtstart>
+		<ical:dtend>1995-12-20T14:51:23.000Z</ical:dtend>
+		<eop:processingDate>2014-09-18T14:49:57.000Z</eop:processingDate>
+		<dct:spatial>POLYGON((-22.566038 80.303942,-27.03955 79.465803,-31.473518 80.066316,-27.247153 80.979766,-22.566038 80.303942))</dct:spatial>
+		<dclite4g:quicklook rdf:resource="http://cci-ice-velocity.terradue.int/quicklooks/SAR_SLC_19951220_145106_19951220_145123_125_DESCENDING.mli.png" />
+		<dct:created>2014-03-12T09:04:38.629Z</dct:created>
+		<dct:dateSubmitted>2014-03-12T09:04:38.629Z</dct:dateSubmitted>
+		<dct:modified>2014-09-18T12:49:57.390Z</dct:modified>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Nationalparken; Greenland; Subarctic America; Greenland Sea</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951115_145402_19951115_145449_125_DESCENDING.slc/rdf">
+		<dc:identifier>SAR_SLC_19951115_145402_19951115_145449_125_DESCENDING.slc</dc:identifier>
+		<dclite4g:series rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf" />
+		<dc:relation rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951115_145402_19951115_145449_125_DESCENDING.slc/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://ec2-54-194-152-80-eu-west-1-compute-amazonaws-com-temp/wf_icesheet/0000001-140918121535003-oozie-oozi-W//results/SAR_SLC_19951115_145402_19951115_145449_125_DESCENDING.slc.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:wrsLongitudeGrid>125</eop:wrsLongitudeGrid>
+		<ical:dtstart>1995-11-15T14:54:02.000Z</ical:dtstart>
+		<ical:dtend>1995-11-15T14:54:49.000Z</ical:dtend>
+		<eop:processingDate>2014-09-18T14:14:13.000Z</eop:processingDate>
+		<dct:spatial>POLYGON((-46.621518 71.03661,-47.68373711 70.2112728,-47.634689 70.205219,-48.62339333 69.37519726,-48.575316 69.369245,-49.757108 68.301559,-52.27717 68.611027,-51.50388378 69.4614348,-51.512297 69.462464,-51.38202895 69.59544249,-51.282898 69.70446,-51.27606253 69.70361373,-50.68223852 70.30979324,-50.691609 70.310936,-50.55296354 70.441758,-50.444899 70.552071,-50.43707676 70.55110554,-49.541432 71.396211,-46.621518 71.03661))</dct:spatial>
+		<dclite4g:quicklook rdf:resource="http://cci-ice-velocity.terradue.int/quicklooks/SAR_SLC_19951115_145402_19951115_145449_125_DESCENDING.mli.png" />
+		<dct:created>2014-03-12T08:18:36.997Z</dct:created>
+		<dct:dateSubmitted>2014-03-12T08:18:36.997Z</dct:dateSubmitted>
+		<dct:modified>2014-09-18T12:14:14.184Z</dct:modified>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Greenland; Subarctic America; Qaasuitsup Kommunia; Davis Strait; Baffin Bay</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951115_145101_19951115_145118_125_DESCENDING.slc/rdf">
+		<dc:identifier>SAR_SLC_19951115_145101_19951115_145118_125_DESCENDING.slc</dc:identifier>
+		<dclite4g:series rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf" />
+		<dc:relation rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951115_145101_19951115_145118_125_DESCENDING.slc/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://ec2-54-194-152-80-eu-west-1-compute-amazonaws-com-temp/wf_icesheet/0000001-140918121535003-oozie-oozi-W//results/SAR_SLC_19951115_145101_19951115_145118_125_DESCENDING.slc.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:wrsLongitudeGrid>125</eop:wrsLongitudeGrid>
+		<ical:dtstart>1995-11-15T14:51:01.000Z</ical:dtstart>
+		<ical:dtend>1995-11-15T14:51:18.000Z</ical:dtend>
+		<eop:processingDate>2014-09-18T13:46:18.000Z</eop:processingDate>
+		<dct:spatial>POLYGON((-22.620058 80.289586,-27.076963 79.449846,-31.506689 80.049722,-27.298417 80.964556,-22.620058 80.289586))</dct:spatial>
+		<dclite4g:quicklook rdf:resource="http://cci-ice-velocity.terradue.int/quicklooks/SAR_SLC_19951115_145101_19951115_145118_125_DESCENDING.mli.png" />
+		<dct:created>2014-03-12T08:27:25.852Z</dct:created>
+		<dct:dateSubmitted>2014-03-12T08:27:25.852Z</dct:dateSubmitted>
+		<dct:modified>2014-09-18T11:46:19.043Z</dct:modified>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Nationalparken; Greenland; Subarctic America; Greenland Sea</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951011_145410_19951011_145512_125_DESCENDING.slc/rdf">
+		<dc:identifier>SAR_SLC_19951011_145410_19951011_145512_125_DESCENDING.slc</dc:identifier>
+		<dclite4g:series rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/rdf" />
+		<dc:relation rdf:resource="http://cci-ice-velocity.terradue.int/catalogue/search/ICESHEET_CCI_SLC/SAR_SLC_19951011_145410_19951011_145512_125_DESCENDING.slc/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://ec2-54-194-152-80-eu-west-1-compute-amazonaws-com-temp/wf_icesheet/0000001-140918121535003-oozie-oozi-W//results/SAR_SLC_19951011_145410_19951011_145512_125_DESCENDING.slc.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:wrsLongitudeGrid>125</eop:wrsLongitudeGrid>
+		<ical:dtstart>1995-10-11T14:54:10.000Z</ical:dtstart>
+		<ical:dtend>1995-10-11T14:55:12.000Z</ical:dtend>
+		<eop:processingDate>2014-09-18T13:30:49.000Z</eop:processingDate>
+		<dct:spatial>POLYGON((-46.64804 71.051062,-47.70802768 70.22534943,-47.661615 70.219627,-48.64809164 69.38924049,-48.602557 69.383609,-49.52367634 68.5490701,-49.479045 68.543529,-50.586464 67.47099,-53.018705 67.770703,-52.29564116 68.62388473,-52.303232 68.624816,-52.18034388 68.75993016,-52.089115 68.867576,-52.08311596 68.8668312,-51.52974224 69.47525964,-51.538165 69.476289,-51.40785673 69.60927144,-51.308702 69.718291,-51.30185879 69.71744467,-50.7078397 70.32365416,-50.71722 70.324797,-50.57854506 70.45560217,-50.470428 70.565938,-50.46259487 70.56497222,-49.566607 71.410113,-46.64804 71.051062))</dct:spatial>
+		<dclite4g:quicklook rdf:resource="http://cci-ice-velocity.terradue.int/quicklooks/SAR_SLC_19951011_145410_19951011_145512_125_DESCENDING.mli.png" />
+		<dct:created>2014-03-12T07:53:18.254Z</dct:created>
+		<dct:dateSubmitted>2014-03-12T07:53:18.254Z</dct:dateSubmitted>
+		<dct:modified>2014-09-18T11:30:50.252Z</dct:modified>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Greenland; Subarctic America; Qaasuitsup Kommunia; Davis Strait; Baffin Bay; Qeqqata Kommunia</dc:coverage>
+	</dclite4g:DataSet>
+</rdf:RDF>

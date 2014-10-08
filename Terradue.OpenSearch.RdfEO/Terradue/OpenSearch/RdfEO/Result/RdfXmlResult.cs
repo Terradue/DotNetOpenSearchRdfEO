@@ -36,15 +36,20 @@ namespace Terradue.OpenSearch.Result {
         }
 
         public RdfXmlResult(XElement root) : base() {
-
-            Id = root.Attribute(XName.Get("about", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")).Value;
-            if (root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null)
+            if ( root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null )
                 Title = root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value;
-            if (root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null)
+            if ( root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null )
                 Date = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
-            if (root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null)
+            if ( root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null )
                 Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
             elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
+            links = new Collection<SyndicationLink>();
+            if ( root.Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)) != null ){
+                links.Add(new SyndicationLink(new Uri(root.Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)).Value), "self", "Reference Link", "application/rdf+xml", 0));
+            }
+            foreach (XElement onlineResource in root.Elements(XName.Get("onlineResource", RdfXmlDocument.dclite4gns.NamespaceName))) {
+                links.Add(new SyndicationLink(new Uri(onlineResource.Elements().First().Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)).Value), "enclosure", "Data", "application/binary", 0));
+            }
         }
 
         public XElement GetElement() {
@@ -96,8 +101,6 @@ namespace Terradue.OpenSearch.Result {
             get {
                 var link = Links.FirstOrDefault(l => l.RelationshipType == "self");
                 return link == null ? null : link.Uri.ToString();
-            }
-            set {
             }
         }
 
@@ -160,6 +163,6 @@ namespace Terradue.OpenSearch.Result {
 
         #endregion
 
-       
+
     }
 }
