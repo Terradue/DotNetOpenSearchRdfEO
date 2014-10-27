@@ -46,13 +46,14 @@ namespace Terradue.OpenSearch.Result {
                 throw new FormatException("Not a RDF document");
             description = rdf.Element(rdfns + "Description");
 
+            LoadDescription(description);
+
             series = rdf.Element(dclite4gns + "Series");
 
             IEnumerable<XElement> datasets = rdf.Elements(dclite4gns + "DataSet");
 
             items = LoadItems(datasets);
 
-            elementExtensions = XElementsToElementExtensions(description.Elements());
 
         }
 
@@ -81,6 +82,16 @@ namespace Terradue.OpenSearch.Result {
         /// <param name="reader">Reader.</param>
         public new static RdfXmlDocument Load(XmlReader reader) {
             return new RdfXmlDocument(XDocument.Load(reader));
+        }
+
+        void LoadDescription(XElement description) {
+
+            foreach (XElement link in description.Elements(XName.Get("link", RdfXmlDocument.atomns.NamespaceName))) {
+                links.Add(SyndicationLinkFromXElement(link));
+            }
+
+
+            elementExtensions = XElementsToElementExtensions(description.Elements());
         }
 
         public XElement GetDescription() {
