@@ -21,6 +21,6 @@ Global
 		{767AD2D6-B4CE-4519-BC2F-74728C1D90A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Terradue.OpenSearch.RdfEO\Terradue.OpenSearch.RdfEO.csproj
+		StartupItem = Terradue.OpenSearch.RdfEO.Test\Terradue.OpenSearch.RdfEO.Test.csproj
 	EndGlobalSection
 EndGlobal
