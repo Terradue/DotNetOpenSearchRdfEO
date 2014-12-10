@@ -153,7 +153,7 @@ namespace Terradue.OpenSearch.Result {
             }
         }
 
-        public string Title {
+        public TextSyndicationContent Title {
             get ;
             set ;
         }
@@ -197,6 +197,9 @@ namespace Terradue.OpenSearch.Result {
             get {
                 return elementExtensions;
             }
+            set {
+                elementExtensions = value;
+            }
         }
 
         Collection<Terradue.ServiceModel.Syndication.SyndicationLink> links = new Collection<SyndicationLink>();
@@ -204,6 +207,9 @@ namespace Terradue.OpenSearch.Result {
         public Collection<Terradue.ServiceModel.Syndication.SyndicationLink> Links {
             get {
                 return links;          
+            }
+            set {
+                links = value;
             }
         }
 
@@ -284,6 +290,43 @@ namespace Terradue.OpenSearch.Result {
             set{ }
         }
 
+
+        readonly Collection<SyndicationPerson> contributors;
+        public Collection<SyndicationPerson> Contributors {
+            get {
+                return contributors;
+            }
+        }
+
+        TextSyndicationContent copyright;
+        public TextSyndicationContent Copyright {
+            get {
+                return copyright;
+            }
+            set {
+                copyright = value;
+            }
+        }
+
+        TextSyndicationContent description;
+        public TextSyndicationContent Description {
+            get {
+                return description;
+            }
+            set {
+                description = value;
+            }
+        }
+
+        string generator;
+        public string Generator {
+            get {
+                return generator;
+            }
+            set {
+                generator = value;
+            }
+        }
         #endregion
 
         internal static SyndicationLink SyndicationLinkFromXElement(XElement elem) {

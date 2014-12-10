@@ -24,7 +24,7 @@ namespace Terradue.OpenSearch.Result {
 
         public RdfXmlResult(IOpenSearchResultItem item) : base() {
 
-            if (!string.IsNullOrEmpty(item.Title))
+            if (item.Title != null)
                 Title = item.Title;
             if (item.Date.Ticks != 0)
                 Date = item.Date;
@@ -37,7 +37,7 @@ namespace Terradue.OpenSearch.Result {
 
         public RdfXmlResult(XElement root) : base() {
             if ( root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null )
-                Title = root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value;
+                Title = new TextSyndicationContent(root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value);
             if ( root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null )
                 Date = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
             if ( root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null )
@@ -97,14 +97,21 @@ namespace Terradue.OpenSearch.Result {
 
         #region IOpenSearchResult implementation
 
+        string id;
         public string Id {
             get {
-                var link = Links.FirstOrDefault(l => l.RelationshipType == "self");
-                return link == null ? null : link.Uri.ToString();
+                if (string.IsNullOrEmpty(id)) {
+                    var link = Links.FirstOrDefault(l => l.RelationshipType == "self");
+                    id = link == null ? null : link.Uri.ToString();
+                }
+                return id;
+            }
+            set {
+                id = value;
             }
         }
 
-        public string Title {
+        public TextSyndicationContent Title {
             get ;
             set ;
         }
@@ -125,6 +132,9 @@ namespace Terradue.OpenSearch.Result {
             get {
                 return elementExtensions;
             }
+            set {
+                elementExtensions = value;
+            }
         }
 
         Collection<Terradue.ServiceModel.Syndication.SyndicationLink> links = new Collection<SyndicationLink>();
@@ -132,6 +142,9 @@ namespace Terradue.OpenSearch.Result {
         public Collection<Terradue.ServiceModel.Syndication.SyndicationLink> Links {
             get {
                 return links;
+            }
+            set {
+                links = value;
             }
         }
 
@@ -161,6 +174,43 @@ namespace Terradue.OpenSearch.Result {
             }
         }
 
+
+        TextSyndicationContent summary;
+        public TextSyndicationContent Summary {
+            get {
+                return summary;
+            }
+            set {
+                summary = value;
+            }
+        }
+
+        readonly Collection<SyndicationPerson> contributors;
+        public Collection<SyndicationPerson> Contributors {
+            get {
+                return contributors;
+            }
+        }
+
+        TextSyndicationContent copyright;
+        public TextSyndicationContent Copyright {
+            get {
+                return copyright;
+            }
+            set {
+                copyright = value;
+            }
+        }
+
+        SyndicationContent content;
+        public SyndicationContent Content {
+            get {
+                return content;
+            }
+            set {
+                content = value;
+            }
+        }
         #endregion
 
 
