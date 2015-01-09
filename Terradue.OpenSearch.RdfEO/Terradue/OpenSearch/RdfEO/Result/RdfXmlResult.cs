@@ -185,7 +185,7 @@ namespace Terradue.OpenSearch.Result {
             }
         }
 
-        readonly Collection<SyndicationPerson> contributors;
+        readonly Collection<SyndicationPerson> contributors = new Collection<SyndicationPerson>();
         public Collection<SyndicationPerson> Contributors {
             get {
                 return contributors;
