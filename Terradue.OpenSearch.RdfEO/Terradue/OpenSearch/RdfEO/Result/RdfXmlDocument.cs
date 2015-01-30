@@ -66,6 +66,7 @@ namespace Terradue.OpenSearch.Result {
             elementExtensions = results.ElementExtensions;
 
             if (results.Date.Ticks > 0)
+                Date = results.Date;
             if (results.Items != null) {
                 items = new List<RdfXmlResult>();
                 foreach (var item in results.Items) {
