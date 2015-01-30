@@ -20,6 +20,7 @@ using System.Collections.Specialized;
 using Terradue.OpenSearch.Response;
 using Terradue.ServiceModel.Syndication;
 using System.Xml.Linq;
+using System.IO;
 
 [assembly:Addin]
 [assembly:AddinDependency("OpenSearchEngine", "1.0")]
@@ -54,7 +55,7 @@ namespace Terradue.OpenSearch.Engine.Extensions {
             }
         }
 
-        public override IOpenSearchResultCollection ReadNative(OpenSearchResponse response) {
+        public override IOpenSearchResultCollection ReadNative(IOpenSearchResponse response) {
             if (response.ContentType == "application/rdf+xml")
                 return TransformRdfResponseToRdfXmlDocument(response);
 
@@ -78,7 +79,7 @@ namespace Terradue.OpenSearch.Engine.Extensions {
             }
         }
 
-        public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(OpenSearchResponse response) {
+        public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(IOpenSearchResponse response) {
             RdfXmlDocument rdfDoc = TransformRdfResponseToRdfXmlDocument(response);
 
             SyndicationLink link = rdfDoc.Links.SingleOrDefault(l => l.RelationshipType == "search");
@@ -95,17 +96,22 @@ namespace Terradue.OpenSearch.Engine.Extensions {
         /// </summary>
         /// <returns>The rdf response to rdf xml document.</returns>
         /// <param name="response">Response.</param>
-        public static RdfXmlDocument TransformRdfResponseToRdfXmlDocument(OpenSearchResponse response) {
+        public static RdfXmlDocument TransformRdfResponseToRdfXmlDocument(IOpenSearchResponse response) {
             RdfXmlDocument rdfDoc;
 
-            XmlReader reader = XmlReader.Create(response.GetResponseStream());
+            if (response.ObjectType == typeof(byte[])) {
 
-            rdfDoc = RdfXmlDocument.Load(reader);
+                XmlReader reader = XmlReader.Create(new MemoryStream((byte[])response.GetResponseObject()));
 
-            rdfDoc.ElementExtensions.Add(new SyndicationElementExtension("queryTime", "http://a9.com/-/spec/opensearch/1.1/",   
+                rdfDoc = RdfXmlDocument.Load(reader);
+
+                rdfDoc.ElementExtensions.Add(new SyndicationElementExtension("queryTime", "http://a9.com/-/spec/opensearch/1.1/",   
                                                                          response.RequestTime.Milliseconds.ToString()));
 
-            return rdfDoc;
+                return rdfDoc;
+            }
+
+            return null;
         }
 
         /// <summary>
