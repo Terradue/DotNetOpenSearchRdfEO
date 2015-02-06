@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Terradue.OpenSearch.RdfEO</id>
-    <version>1.1.1</version>
+    <version>1.2</version>
     <title>Terradue.OpenSearch.RdfEO</title>
     <authors>Terradue</authors>
     <projectUrl>https://github.com/Terradue/DotNetOpenSearchRdfEO</projectUrl>
@@ -12,7 +12,7 @@
     <summary>Rdf Earth Observation plugin for OpenSearch library for .Net</summary>
     <dependencies>
       <dependency id="Terradue.ServiceModel.Syndication" version="1.0.0" />
-      <dependency id="Terradue.OpenSearch" version="[1.8.0,1.9)" />
+      <dependency id="Terradue.OpenSearch" version="[1.9.0,1.10)" />
       <dependency id="Terradue.GeoJson" version="[1.4.0,1.5)" />
       <dependency id="ServiceStack.Text" version="[3.9.71,4)" />
     </dependencies>
