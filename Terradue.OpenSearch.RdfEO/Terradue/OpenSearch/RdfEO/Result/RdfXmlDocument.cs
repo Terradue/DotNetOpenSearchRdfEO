@@ -17,6 +17,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using System.IO;
 using System.ComponentModel;
+using System.Collections.Specialized;
 
 namespace Terradue.OpenSearch.Result {
     /// <summary>
@@ -62,6 +63,9 @@ namespace Terradue.OpenSearch.Result {
             Title = results.Title;
             Identifier = results.Identifier;
             Id = results.Id;
+
+            duration = results.Duration;
+            openSearchable = results.OpenSearchable;
 
             elementExtensions = results.ElementExtensions;
 
@@ -173,8 +177,19 @@ namespace Terradue.OpenSearch.Result {
         }
 
         public string Identifier {
-            get ;
-            set ;
+            get {
+                var identifier = ElementExtensions.ReadElementExtensions<string>("identifier", "http://purl.org/dc/elements/1.1/");
+                return identifier.Count == 0 ? this.Id : identifier[0];
+            }
+            set {
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "identifier" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), value).CreateReader());
+            }
         }
 
         public long Count {
@@ -185,10 +200,54 @@ namespace Terradue.OpenSearch.Result {
 
         public long TotalResults {
             get {
-                var el = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
-                if (el.Count > 0)
-                    return long.Parse(el[0]);
-                return 0;
+                var totalResults = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
+                return totalResults.Count == 0 ? 0 : long.Parse(totalResults[0]);
+            }
+            set {
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "totalResults" && ext.OuterNamespace == "http://a9.com/-/spec/opensearch/1.1//") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("totalResults", "http://a9.com/-/spec/opensearch/1.1/"), value).CreateReader());
+            }
+        }
+
+        IOpenSearchable openSearchable;
+        public IOpenSearchable OpenSearchable {
+            get {
+                return openSearchable;
+            }
+            set {
+                openSearchable = value;
+            }
+        }
+
+        NameValueCollection parameters;
+        public NameValueCollection Parameters {
+            get {
+                return parameters;
+            }
+            set {
+                parameters = value;
+            }
+        }
+
+        TimeSpan duration;
+        public TimeSpan Duration {
+            get {
+                var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
+                return duration.Count == 0 ? new TimeSpan() : TimeSpan.FromMilliseconds(duration[0]);
+            }
+            set {
+                foreach (var ext in this.ElementExtensions.ToArray()) {
+                    if (ext.OuterName == "queryTime" && ext.OuterNamespace == "http://purl.org/dc/elements/1.1/") {
+                        this.ElementExtensions.Remove(ext);
+                        continue;
+                    }
+                }
+                this.ElementExtensions.Add(new XElement(XName.Get("queryTime", "http://purl.org/dc/elements/1.1/"), value.TotalMilliseconds).CreateReader());
             }
         }
 
