@@ -39,11 +39,11 @@
     <Reference Include="Mono.Addins">
       <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
     </Reference>
-    <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.10.2\lib\net40\Terradue.OpenSearch.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.GeoJson">
       <HintPath>..\packages\Terradue.GeoJson.1.4.15\lib\net40\Terradue.GeoJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.10.4\lib\net40\Terradue.OpenSearch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
