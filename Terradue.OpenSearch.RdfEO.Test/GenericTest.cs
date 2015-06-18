@@ -23,9 +23,9 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             var osr = ose.Query(entity, new System.Collections.Specialized.NameValueCollection(), "rdf");
 
-            OpenSearchFactory.ReplaceOpenSearchDescriptionLinks(entity, osr.Result);
+            OpenSearchFactory.ReplaceOpenSearchDescriptionLinks(entity, osr);
 
-            Assert.That(osr.Result.Links.Count > 0);
+            Assert.That(osr.Links.Count > 0);
 
         }
     }

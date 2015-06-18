@@ -17,6 +17,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using System.IO;
 using System.ComponentModel;
+using System.Collections.Specialized;
 
 namespace Terradue.OpenSearch.Result {
     /// <summary>
@@ -62,6 +63,9 @@ namespace Terradue.OpenSearch.Result {
             Title = results.Title;
             Identifier = results.Identifier;
             Id = results.Id;
+
+            duration = results.Duration;
+            openSearchable = results.OpenSearchable;
 
             elementExtensions = results.ElementExtensions;
 
@@ -183,12 +187,47 @@ namespace Terradue.OpenSearch.Result {
             }
         }
 
+        long totalresults;
         public long TotalResults {
             get {
                 var el = ElementExtensions.ReadElementExtensions<string>("totalResults", "http://a9.com/-/spec/opensearch/1.1/");
                 if (el.Count > 0)
-                    return long.Parse(el[0]);
-                return 0;
+                    totalresults = long.Parse(el[0]);
+                else totalresults = 0;
+                return totalresults;
+            }
+            set {
+                totalresults = value;
+            }
+        }
+
+        IOpenSearchable openSearchable;
+        public IOpenSearchable OpenSearchable {
+            get {
+                return openSearchable;
+            }
+            set {
+                openSearchable = value;
+            }
+        }
+
+        NameValueCollection parameters;
+        public NameValueCollection Parameters {
+            get {
+                return parameters;
+            }
+            set {
+                parameters = value;
+            }
+        }
+
+        TimeSpan duration;
+        public TimeSpan Duration {
+            get {
+                return duration;
+            }
+            set {
+                duration = value;
             }
         }
 
