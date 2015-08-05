@@ -64,7 +64,7 @@ namespace Terradue.OpenSearch.Result {
             Identifier = results.Identifier;
             Id = results.Id;
 
-            duration = results.Duration;
+            duration = results.QueryTimeSpan;
             openSearchable = results.OpenSearchable;
 
             elementExtensions = results.ElementExtensions;
@@ -235,7 +235,7 @@ namespace Terradue.OpenSearch.Result {
         }
 
         TimeSpan duration;
-        public TimeSpan Duration {
+        public TimeSpan QueryTimeSpan {
             get {
                 var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
                 return duration.Count == 0 ? new TimeSpan() : TimeSpan.FromMilliseconds(duration[0]);
@@ -387,6 +387,11 @@ namespace Terradue.OpenSearch.Result {
                 generator = value;
             }
         }
+
+        public object Clone() {
+            return new RdfXmlDocument(this);
+        }
+
         #endregion
 
         internal static SyndicationLink SyndicationLinkFromXElement(XElement elem) {
