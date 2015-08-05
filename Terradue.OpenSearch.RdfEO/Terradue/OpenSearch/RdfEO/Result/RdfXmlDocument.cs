@@ -67,10 +67,13 @@ namespace Terradue.OpenSearch.Result {
             duration = results.Duration;
             openSearchable = results.OpenSearchable;
 
-            elementExtensions = results.ElementExtensions;
 
-            if (results.Date.Ticks > 0)
-                Date = results.Date;
+            elementExtensions = results.ElementExtensions;
+            TotalResults = results.TotalResults;
+            Links = results.Links;
+            Authors = results.Authors;
+
+            Date = results.Date;
             if (results.Items != null) {
                 items = new List<RdfXmlResult>();
                 foreach (var item in results.Items) {
