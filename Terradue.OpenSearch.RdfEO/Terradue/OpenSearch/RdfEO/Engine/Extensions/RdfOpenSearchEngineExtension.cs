@@ -106,7 +106,7 @@ namespace Terradue.OpenSearch.Engine.Extensions {
                 rdfDoc = RdfXmlDocument.Load(reader);
 
                 rdfDoc.OpenSearchable = response.Entity;
-                rdfDoc.Duration = response.RequestTime;
+                rdfDoc.QueryTimeSpan = response.RequestTime;
        
                 return rdfDoc;
             }
