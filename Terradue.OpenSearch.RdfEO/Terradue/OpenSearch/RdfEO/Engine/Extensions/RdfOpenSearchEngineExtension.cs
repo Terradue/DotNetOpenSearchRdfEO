@@ -56,7 +56,7 @@ namespace Terradue.OpenSearch.Engine.Extensions {
         }
 
         public override IOpenSearchResultCollection ReadNative(IOpenSearchResponse response) {
-            if (response.ContentType == "application/rdf+xml")
+            if (response.ContentType.StartsWith("application/rdf+xml"))
                 return TransformRdfResponseToRdfXmlDocument(response);
 
             throw new NotSupportedException("RDF extension does not transform OpenSearch response from " + response.ContentType);
