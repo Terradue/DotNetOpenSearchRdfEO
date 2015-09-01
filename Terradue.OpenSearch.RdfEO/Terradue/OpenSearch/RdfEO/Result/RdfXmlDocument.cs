@@ -67,10 +67,13 @@ namespace Terradue.OpenSearch.Result {
             duration = results.QueryTimeSpan;
             openSearchable = results.OpenSearchable;
 
-            elementExtensions = results.ElementExtensions;
 
-            if (results.Date.Ticks > 0)
-                Date = results.Date;
+            elementExtensions = results.ElementExtensions;
+            TotalResults = results.TotalResults;
+            Links = results.Links;
+            Authors = results.Authors;
+
+            LastUpdatedTime = results.LastUpdatedTime;
             if (results.Items != null) {
                 items = new List<RdfXmlResult>();
                 foreach (var item in results.Items) {
@@ -114,7 +117,7 @@ namespace Terradue.OpenSearch.Result {
             description.Add(exts.Elements());
             description.SetAttributeValue(rdfns + "about", Identifier);
             description.Add(new XElement(XName.Get("title", dcns.NamespaceName), Title));
-            description.Add(new XElement(XName.Get("date", RdfXmlDocument.dcns.NamespaceName), Date.ToString("yyyy-MM-ddThh:mm:ss.fZ")));
+            description.Add(new XElement(XName.Get("date", RdfXmlDocument.dcns.NamespaceName), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fZ")));
             return description;
         }
 
@@ -165,10 +168,8 @@ namespace Terradue.OpenSearch.Result {
 
         DateTime date;
 
-        public DateTime Date {
+        public DateTime LastUpdatedTime {
             get {
-                if (date.Ticks == 0)
-                    return DateTime.UtcNow;
                 return date;
             }
             set {

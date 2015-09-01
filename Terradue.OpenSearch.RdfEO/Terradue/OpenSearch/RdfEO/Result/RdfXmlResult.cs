@@ -26,8 +26,8 @@ namespace Terradue.OpenSearch.Result {
 
             if (item.Title != null)
                 Title = item.Title;
-            if (item.Date.Ticks != 0)
-                Date = item.Date;
+            if (item.LastUpdatedTime.Ticks != 0)
+                LastUpdatedTime = item.LastUpdatedTime;
             if (!string.IsNullOrEmpty(item.Identifier))
                 Identifier = item.Identifier;
             elementExtensions = item.ElementExtensions;
@@ -39,7 +39,9 @@ namespace Terradue.OpenSearch.Result {
             if ( root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null )
                 Title = new TextSyndicationContent(root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value);
             if ( root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null )
-                Date = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
+                LastUpdatedTime = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
+            if ( root.Element(XName.Get("published", "http://purl.org/dc/elements/1.1/")) != null )
+                PublishDate = DateTime.Parse(root.Element(XName.Get("published", "http://purl.org/dc/elements/1.1/")).Value);
             if ( root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null )
                 Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
             elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
@@ -56,7 +58,8 @@ namespace Terradue.OpenSearch.Result {
             XElement root = new XElement(XName.Get("DataSet", RdfXmlDocument.dclite4gns.NamespaceName));
             root.SetAttributeValue(XName.Get("about", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"), Id);
             root.Add(new XElement(XName.Get("title", "http://purl.org/dc/elements/1.1/"), Title));
-            root.Add(new XElement(XName.Get("date", "http://purl.org/dc/elements/1.1/"), Date.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
+            root.Add(new XElement(XName.Get("date", "http://purl.org/dc/elements/1.1/"), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
+            root.Add(new XElement(XName.Get("published", "http://purl.org/dc/elements/1.1/"), PublishDate.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), Identifier));
 
             XElement exts = XElement.Load(ElementExtensions.GetReaderAtExtensionWrapper());
@@ -116,7 +119,12 @@ namespace Terradue.OpenSearch.Result {
             set ;
         }
 
-        public DateTime Date {
+        public DateTime LastUpdatedTime {
+            get ;
+            set ;
+        }
+
+        public DateTime PublishDate {
             get ;
             set ;
         }
