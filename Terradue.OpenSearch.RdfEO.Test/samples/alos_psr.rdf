@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:eop="http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:sar="http://earth.esa.int/sar" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#" xmlns:ical="http://www.w3.org/2002/12/cal/ical#" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:sru="http://a9.com/-/opensearch/extensions/sru/2.0/">
+	<rdf:Description rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf">
+		<os:totalResults>21</os:totalResults>
+		<os:startIndex>0</os:startIndex>
+		<os:itemsPerPage>30</os:itemsPerPage>
+		<dc:creator>Terradue CAS version 1.4.0</dc:creator>
+		<dc:date>2015-09-13T12:11:29Z</dc:date>
+		<dc:SizeOrDuration>0.057 sec</dc:SizeOrDuration>
+		<atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf/?startIndex=0" />
+		<atom:link atom:rel="first" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf/?startIndex=0" />
+		<atom:link atom:rel="last" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf/?startIndex=0" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/description" />
+		<os:Query os:role="request" />
+	</rdf:Description>
+	<dclite4g:Series rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf">
+		<dc:identifier>ALOS2_PSR</dc:identifier>
+		<dc:description rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/description/" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:title="Search the ALOS2_PSR Series" atom:href="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/description/" />
+		<dc:title>ALOS-2 Data collection for Nepal Earthquake analysis (ALOS2_PSR)</dc:title>
+		<dct:abstract>ALOS-2 Data collection for Nepal Earthquake analysis (ALOS2_PSR)</dct:abstract>
+		<eop:mission>ALOS2</eop:mission>
+		<eop:platform>ALOS2</eop:platform>
+		<eop:sensor>PALSAR2</eop:sensor>
+		<dct:spatial>POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))</dct:spatial>
+		<dc:subject>Radar Imagery, Solid Earth (Tectonics/Seismic Activity), Water (Water Management), Natural Disasters (Oil Slick), Land (Topography/Mapping,Soil,Vegetation) Ocean and Coast (Ocean Currents and Topography,Ocean Waves,Coastal Geomorphology)</dc:subject>
+		<dc:rights>Only for Processing</dc:rights>
+		<dc:format>CEOS</dc:format>
+		<dclite4g:resolution>Product dependent</dclite4g:resolution>
+		<eop:processingLevel>L1.1</eop:processingLevel>
+		<dct:created>2015-04-28T10:28:45.984Z</dct:created>
+		<dct:modified>2015-04-28T10:28:45.984Z</dct:modified>
+	</dclite4g:Series>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2060263600-150705/rdf">
+		<dc:identifier>ALOS2060263600-150705</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2060263600-150705/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2060263600-150705.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>50962910768</eop:size>
+		<eop:orbitNumber>6026</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>139</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-07-05T16:53:50.000Z</ical:dtstart>
+		<ical:dtend>2015-07-05T16:54:50.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((-78.861 2.743,-75.751 2.102,-76.41 -1.09,-79.518 -0.436,-78.861 2.743)))</dct:spatial>
+		<dct:created>2015-08-06T16:29:18.000Z</dct:created>
+		<dct:dateSubmitted>2015-08-06T14:51:09.226Z</dct:dateSubmitted>
+		<dct:modified>2015-08-06T16:29:18.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3600</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2059074450-150627/rdf">
+		<dc:identifier>ALOS2059074450-150627</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2059074450-150627/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2059074450-150627.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>53531925411</eop:size>
+		<eop:orbitNumber>5907</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>129</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-06-27T15:55:48.000Z</ical:dtstart>
+		<ical:dtend>2015-06-27T15:56:48.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((-73.074 -39.059,-69.053 -39.991,-70.228 -43.114,-74.436 -42.138,-73.074 -39.059)))</dct:spatial>
+		<dct:created>2015-08-06T16:28:41.000Z</dct:created>
+		<dct:dateSubmitted>2015-08-06T14:51:09.200Z</dct:dateSubmitted>
+		<dct:modified>2015-08-06T16:28:41.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>4450</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2052953050-150517/rdf">
+		<dc:identifier>ALOS2052953050-150517</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2052953050-150517/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2052953050-150517.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>50657269869</eop:size>
+		<eop:orbitNumber>5295</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>48</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-17T13:22:48.000Z</ical:dtstart>
+		<ical:dtend>2015-05-17T13:23:48.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.584 30.029,88.184 29.467,87.488 26.283,83.997 26.851,84.584 30.029)))</dct:spatial>
+		<dct:created>2015-06-15T23:03:16.000Z</dct:created>
+		<dct:dateSubmitted>2015-06-15T21:16:23.342Z</dct:dateSubmitted>
+		<dct:modified>2015-06-15T23:03:16.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2052864450-150516/rdf">
+		<dc:identifier>ALOS2052864450-150516</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2052864450-150516/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2052864450-150516.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>53527980333</eop:size>
+		<eop:orbitNumber>5286</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>129</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-16T15:55:47.000Z</ical:dtstart>
+		<ical:dtend>2015-05-16T15:56:47.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((-73.074 -39.059,-69.053 -39.991,-70.228 -43.113,-74.436 -42.137,-73.074 -39.059)))</dct:spatial>
+		<dct:created>2015-08-06T16:28:41.000Z</dct:created>
+		<dct:dateSubmitted>2015-08-06T14:51:09.174Z</dct:dateSubmitted>
+		<dct:modified>2015-08-06T16:28:41.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>4450</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2052213050-150512/rdf">
+		<dc:identifier>ALOS2052213050-150512</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2052213050-150512/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2052213050-150512.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>50637693027</eop:size>
+		<eop:orbitNumber>5221</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>47</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-12T06:25:12.000Z</ical:dtstart>
+		<ical:dtend>2015-05-12T06:26:12.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((86.324 30.029,89.923 29.467,89.227 26.283,85.737 26.851,86.324 30.029)))</dct:spatial>
+		<dct:created>2015-06-15T23:03:16.000Z</dct:created>
+		<dct:dateSubmitted>2015-06-15T21:16:23.321Z</dct:dateSubmitted>
+		<dct:modified>2015-06-15T23:03:16.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050883050-150503/rdf">
+		<dc:identifier>ALOS2050883050-150503</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050883050-150503/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2050883050-150503.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>50657270203</eop:size>
+		<eop:orbitNumber>5088</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>48</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-03T13:23:18.000Z</ical:dtstart>
+		<ical:dtend>2015-05-03T13:24:18.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.583 30.029,88.183 29.467,87.487 26.283,83.996 26.851,84.583 30.029)))</dct:spatial>
+		<dct:created>2015-05-08T15:43:34.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-08T14:52:28.440Z</dct:dateSubmitted>
+		<dct:modified>2015-05-08T15:43:34.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810560-150502/rdf">
+		<dc:identifier>ALOS2050810560-150502</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810560-150502/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2050810560-150502.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>2901477896</eop:size>
+		<eop:orbitNumber>5081</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-02T18:22:54.000Z</ical:dtstart>
+		<ical:dtend>2015-05-02T18:23:54.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.812 28.85,85.526 28.965,85.65 28.353,84.94 28.238,84.812 28.85)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.742Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>560</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810550-150502/rdf">
+		<dc:identifier>ALOS2050810550-150502</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810550-150502/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2050810550-150502.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>2901483468</eop:size>
+		<eop:orbitNumber>5081</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-02T18:14:48.000Z</ical:dtstart>
+		<ical:dtend>2015-05-02T18:15:48.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.916 28.354,85.627 28.469,85.751 27.857,85.044 27.742,84.916 28.354)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.708Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>550</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810540-150502/rdf">
+		<dc:identifier>ALOS2050810540-150502</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810540-150502/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2050810540-150502.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>2895626186</eop:size>
+		<eop:orbitNumber>5081</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-02T18:06:42.000Z</ical:dtstart>
+		<ical:dtend>2015-05-02T18:07:42.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((85.02 27.858,85.727 27.973,85.851 27.361,85.147 27.245,85.02 27.858)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.673Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>540</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810530-150502/rdf">
+		<dc:identifier>ALOS2050810530-150502</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050810530-150502/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2050810530-150502.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>2895590223</eop:size>
+		<eop:orbitNumber>5081</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-05-02T17:58:36.000Z</ical:dtstart>
+		<ical:dtend>2015-05-02T17:59:36.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((85.123 27.361,85.827 27.477,85.95 26.864,85.25 26.749,85.123 27.361)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.639Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>530</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050143050-150428/rdf">
+		<dc:identifier>ALOS2050143050-150428</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2050143050-150428/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2050143050-150428.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>50637692760</eop:size>
+		<eop:orbitNumber>5014</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>47</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-04-28T06:26:12.000Z</ical:dtstart>
+		<ical:dtend>2015-04-28T06:27:12.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((86.321 30.029,89.92 29.467,89.225 26.283,85.734 26.851,86.321 30.029)))</dct:spatial>
+		<dct:created>2015-06-15T23:03:16.000Z</dct:created>
+		<dct:dateSubmitted>2015-06-15T21:16:23.297Z</dct:dateSubmitted>
+		<dct:modified>2015-06-15T23:03:16.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2047843600-150412/rdf">
+		<dc:identifier>ALOS2047843600-150412</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2047843600-150412/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2047843600-150412.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>50919110170</eop:size>
+		<eop:orbitNumber>4784</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>139</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-04-12T16:53:52.000Z</ical:dtstart>
+		<ical:dtend>2015-04-12T16:54:52.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((-78.862 2.743,-75.751 2.102,-76.411 -1.09,-79.518 -0.437,-78.862 2.743)))</dct:spatial>
+		<dct:created>2015-08-06T16:29:18.000Z</dct:created>
+		<dct:dateSubmitted>2015-08-06T14:51:09.146Z</dct:dateSubmitted>
+		<dct:modified>2015-08-06T16:29:18.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3600</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2046743050-150405/rdf">
+		<dc:identifier>ALOS2046743050-150405</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2046743050-150405/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2046743050-150405.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>50637690023</eop:size>
+		<eop:orbitNumber>4674</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>48</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-04-05T13:24:30.000Z</ical:dtstart>
+		<ical:dtend>2015-04-05T13:25:30.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.579 30.007,88.196 29.443,87.489 26.261,83.984 26.831,84.579 30.007)))</dct:spatial>
+		<dct:created>2015-05-08T15:43:34.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-08T14:51:57.718Z</dct:dateSubmitted>
+		<dct:modified>2015-05-08T15:43:34.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2046654450-150404/rdf">
+		<dc:identifier>ALOS2046654450-150404</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2046654450-150404/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2046654450-150404.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>53486744817</eop:size>
+		<eop:orbitNumber>4665</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>129</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-04-04T15:55:49.000Z</ical:dtstart>
+		<ical:dtend>2015-04-04T15:56:49.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((-73.132 -39.071,-69.062 -40.015,-70.198 -43.145,-74.465 -42.156,-73.132 -39.071)))</dct:spatial>
+		<dct:created>2015-08-06T16:28:41.000Z</dct:created>
+		<dct:dateSubmitted>2015-08-06T14:51:09.074Z</dct:dateSubmitted>
+		<dct:modified>2015-08-06T16:28:41.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>4450</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2046003050-150331/rdf">
+		<dc:identifier>ALOS2046003050-150331</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2046003050-150331/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2046003050-150331.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>PGT</eop:acquisitionStation>
+		<eop:size>50640420928</eop:size>
+		<eop:orbitNumber>4600</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>47</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-03-31T06:27:30.000Z</ical:dtstart>
+		<ical:dtend>2015-03-31T06:28:30.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((86.318 30.008,89.935 29.444,89.228 26.262,85.722 26.832,86.318 30.008)))</dct:spatial>
+		<dct:created>2015-06-15T23:03:16.000Z</dct:created>
+		<dct:dateSubmitted>2015-06-15T21:16:23.277Z</dct:dateSubmitted>
+		<dct:modified>2015-06-15T23:03:16.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040533050-150222/rdf">
+		<dc:identifier>ALOS2040533050-150222</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040533050-150222/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2040533050-150222.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>50657264043</eop:size>
+		<eop:orbitNumber>4053</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>48</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-02-22T13:26:24.000Z</ical:dtstart>
+		<ical:dtend>2015-02-22T13:27:24.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.579 30.008,88.197 29.444,87.491 26.261,83.984 26.832,84.579 30.008)))</dct:spatial>
+		<dct:created>2015-06-15T23:03:16.000Z</dct:created>
+		<dct:dateSubmitted>2015-06-15T21:16:23.257Z</dct:dateSubmitted>
+		<dct:modified>2015-06-15T23:03:16.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460560-150221/rdf">
+		<dc:identifier>ALOS2040460560-150221</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460560-150221/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2040460560-150221.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>2895467398</eop:size>
+		<eop:orbitNumber>4046</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-02-21T18:25:54.000Z</ical:dtstart>
+		<ical:dtend>2015-02-21T18:26:54.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.807 28.836,85.527 28.952,85.653 28.341,84.937 28.225,84.807 28.836)))</dct:spatial>
+		<dct:created>2015-05-07T17:09:45.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.603Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T17:09:45.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>560</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460550-150221/rdf">
+		<dc:identifier>ALOS2040460550-150221</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460550-150221/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2040460550-150221.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>2901323934</eop:size>
+		<eop:orbitNumber>4046</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-02-21T18:17:48.000Z</ical:dtstart>
+		<ical:dtend>2015-02-21T18:18:48.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((84.91 28.34,85.629 28.456,85.755 27.845,85.04 27.728,84.91 28.34)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.565Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>550</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460540-150221/rdf">
+		<dc:identifier>ALOS2040460540-150221</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460540-150221/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2040460540-150221.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>2901315276</eop:size>
+		<eop:orbitNumber>4046</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-02-21T18:09:42.000Z</ical:dtstart>
+		<ical:dtend>2015-02-21T18:10:42.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((85.014 27.844,85.729 27.96,85.854 27.348,85.143 27.232,85.014 27.844)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T15:14:21.516Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>540</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460530-150221/rdf">
+		<dc:identifier>ALOS2040460530-150221</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2040460530-150221/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2040460530-150221.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>2895423152</eop:size>
+		<eop:orbitNumber>4046</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>157</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-02-21T18:01:36.000Z</ical:dtstart>
+		<ical:dtend>2015-02-21T18:02:36.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((85.119 27.348,85.829 27.464,85.954 26.852,85.247 26.736,85.119 27.348)))</dct:spatial>
+		<dct:created>2015-05-07T16:48:46.000Z</dct:created>
+		<dct:dateSubmitted>2015-05-07T14:59:53.042Z</dct:dateSubmitted>
+		<dct:modified>2015-05-07T16:48:46.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>530</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>SM3</eop:swathIdentifier>
+		<eop:orbitDirection>Ascending</eop:orbitDirection>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2039793050-150217/rdf">
+		<dc:identifier>ALOS2039793050-150217</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ALOS2_PSR/ALOS2039793050-150217/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="http://eo-virtual-archive4.esa.int/supersites/ALOS2039793050-150217.zip" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:acquisitionStation>KSGS</eop:acquisitionStation>
+		<eop:size>50656283303</eop:size>
+		<eop:orbitNumber>3979</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>47</eop:wrsLongitudeGrid>
+		<ical:dtstart>2015-02-17T06:28:54.000Z</ical:dtstart>
+		<ical:dtend>2015-02-17T06:29:54.000Z</ical:dtend>
+		<dct:spatial>MULTIPOLYGON(((86.324 30.029,89.923 29.467,89.227 26.283,85.737 26.851,86.324 30.029)))</dct:spatial>
+		<dct:created>2015-06-15T23:03:16.000Z</dct:created>
+		<dct:dateSubmitted>2015-06-15T21:16:23.226Z</dct:dateSubmitted>
+		<dct:modified>2015-06-15T23:03:16.000Z</dct:modified>
+		<eop:wrsLatitudeGrid>3050</eop:wrsLatitudeGrid>
+		<sar:polarisationChannels>HH+HV</sar:polarisationChannels>
+		<eop:swathIdentifier>WD1</eop:swathIdentifier>
+		<eop:orbitDirection>Descending</eop:orbitDirection>
+	</dclite4g:DataSet>
+</rdf:RDF>

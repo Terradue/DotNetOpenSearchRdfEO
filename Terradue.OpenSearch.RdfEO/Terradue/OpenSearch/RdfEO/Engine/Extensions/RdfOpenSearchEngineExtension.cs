@@ -21,10 +21,12 @@ using Terradue.OpenSearch.Response;
 using Terradue.ServiceModel.Syndication;
 using System.Xml.Linq;
 using System.IO;
+using Terradue.OpenSearch.Engine;
+using Terradue.OpenSearch.RdfEO.Result;
 
 [assembly:Addin]
 [assembly:AddinDependency("OpenSearchEngine", "1.0")]
-namespace Terradue.OpenSearch.Engine.Extensions {
+namespace Terradue.OpenSearch.RdfEO.Extensions {
     /// <summary>
     /// Rdf open search engine extension.
     /// </summary>
