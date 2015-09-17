@@ -17,8 +17,9 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using System.IO;
 using Terradue.GeoJson.Geometry;
+using Terradue.OpenSearch.Result;
 
-namespace Terradue.OpenSearch.Result {
+namespace Terradue.OpenSearch.RdfEO.Result {
 
     public class RdfXmlResult : IOpenSearchResultItem {
 
@@ -35,31 +36,38 @@ namespace Terradue.OpenSearch.Result {
 
         }
 
-        public RdfXmlResult(XElement root) : base() {
-            if ( root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null )
+        public RdfXmlResult(XElement root, XElement series) : base() {
+            if (root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")) != null)
                 Title = new TextSyndicationContent(root.Element(XName.Get("title", "http://purl.org/dc/elements/1.1/")).Value);
-            if ( root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null )
+            if (root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")) != null)
                 LastUpdatedTime = DateTime.Parse(root.Element(XName.Get("date", "http://purl.org/dc/elements/1.1/")).Value);
-            if ( root.Element(XName.Get("published", "http://purl.org/dc/elements/1.1/")) != null )
-                PublishDate = DateTime.Parse(root.Element(XName.Get("published", "http://purl.org/dc/elements/1.1/")).Value);
-            if ( root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null )
+            if (root.Element(XName.Get("created", "http://purl.org/dc/terms/")) != null)
+                PublishDate = DateTime.Parse(root.Element(XName.Get("created", "http://purl.org/dc/terms/")).Value);
+            if (root.Element(XName.Get("modified", "http://purl.org/dc/terms/")) != null)
+                LastUpdatedTime = DateTime.Parse(root.Element(XName.Get("modified", "http://purl.org/dc/terms/")).Value);
+            if (root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null)
                 Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
-            elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
+            //elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
+            ElementExtensions.Add(BuildEarthObservationReader(root, series));
             links = new Collection<SyndicationLink>();
-            if ( root.Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)) != null ){
+            if (root.Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)) != null) {
                 links.Add(new SyndicationLink(new Uri(root.Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)).Value), "self", "Reference Link", "application/rdf+xml", 0));
             }
             foreach (XElement onlineResource in root.Elements(XName.Get("onlineResource", RdfXmlDocument.dclite4gns.NamespaceName))) {
-                links.Add(new SyndicationLink(new Uri(onlineResource.Elements().First().Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)).Value), "enclosure", "Data", "application/binary", 0));
+                var sizex = root.Element(XName.Get("size", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
+                long size = 0;
+                if (sizex != null)
+                    long.TryParse(sizex.Value, out size);
+                links.Add(new SyndicationLink(new Uri(onlineResource.Elements().First().Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)).Value), "enclosure", "Data", "application/binary", size));
             }
         }
 
         public XElement GetElement() {
             XElement root = new XElement(XName.Get("DataSet", RdfXmlDocument.dclite4gns.NamespaceName));
             root.SetAttributeValue(XName.Get("about", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"), Id);
-            root.Add(new XElement(XName.Get("title", "http://purl.org/dc/elements/1.1/"), Title));
-            root.Add(new XElement(XName.Get("date", "http://purl.org/dc/elements/1.1/"), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
-            root.Add(new XElement(XName.Get("published", "http://purl.org/dc/elements/1.1/"), PublishDate.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
+            root.Add(new XElement(XName.Get("title", "http://purl.org/dc/elements/1.1/"), Title.Text));
+            root.Add(new XElement(XName.Get("updated", "http://purl.org/dc/elements/1.1/"), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
+            root.Add(new XElement(XName.Get("created", "http://purl.org/dc/elements/1.1/"), PublishDate.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), Identifier));
 
             XElement exts = XElement.Load(ElementExtensions.GetReaderAtExtensionWrapper());
@@ -98,9 +106,22 @@ namespace Terradue.OpenSearch.Result {
             return elements;
         }
 
+        public RdfXmlDocument Parent {
+            get ;
+            set ;
+        }
+
+        public XmlReader BuildEarthObservationReader(XElement root, XElement series){
+
+            return RdfEarthObservationFactory.GetXmlReaderEarthObservationTypeFromRdf(root, series);
+
+
+        }
+
         #region IOpenSearchResult implementation
 
         string id;
+
         public string Id {
             get {
                 if (string.IsNullOrEmpty(id)) {
@@ -184,6 +205,7 @@ namespace Terradue.OpenSearch.Result {
 
 
         TextSyndicationContent summary;
+
         public TextSyndicationContent Summary {
             get {
                 return summary;
@@ -194,6 +216,7 @@ namespace Terradue.OpenSearch.Result {
         }
 
         readonly Collection<SyndicationPerson> contributors = new Collection<SyndicationPerson>();
+
         public Collection<SyndicationPerson> Contributors {
             get {
                 return contributors;
@@ -201,6 +224,7 @@ namespace Terradue.OpenSearch.Result {
         }
 
         TextSyndicationContent copyright;
+
         public TextSyndicationContent Copyright {
             get {
                 return copyright;
@@ -211,6 +235,7 @@ namespace Terradue.OpenSearch.Result {
         }
 
         SyndicationContent content;
+
         public SyndicationContent Content {
             get {
                 return content;
@@ -219,6 +244,7 @@ namespace Terradue.OpenSearch.Result {
                 content = value;
             }
         }
+
         #endregion
 
 

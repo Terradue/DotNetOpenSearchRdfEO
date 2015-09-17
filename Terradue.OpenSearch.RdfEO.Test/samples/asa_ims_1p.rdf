@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:eop="http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:sar="http://earth.esa.int/sar" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#" xmlns:ical="http://www.w3.org/2002/12/cal/ical#" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:sru="http://a9.com/-/opensearch/extensions/sru/2.0/">
+	<rdf:Description rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf">
+		<os:totalResults>1581</os:totalResults>
+		<os:startIndex>0</os:startIndex>
+		<os:itemsPerPage>30</os:itemsPerPage>
+		<dc:creator>Terradue CAS version 1.4.0</dc:creator>
+		<dc:date>2015-09-13T13:07:08Z</dc:date>
+		<dc:SizeOrDuration>0.075 sec</dc:SizeOrDuration>
+		<atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf/?startIndex=0" />
+		<atom:link atom:rel="first" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf/?startIndex=0" />
+		<atom:link atom:rel="next" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf/?startIndex=30" />
+		<atom:link atom:rel="last" atom:type="application/rdf+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf/?startIndex=1560" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/description" />
+		<os:Query os:role="request" />
+	</rdf:Description>
+	<dclite4g:Series rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf">
+		<dc:identifier>ASA_IMS_1P</dc:identifier>
+		<dc:description rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/description/" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:title="Search the ASA_IMS_1P Series" atom:href="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/description/" />
+		<dc:title>ENVISAT ASAR Image Mode Single Look Complex Image (ASA_IMS_1P)</dc:title>
+		<dct:abstract>The ASAR Image Mode Single Look Complex Image represents a single-look, complex, slant-range, digital image generated from Level 0 ASAR data collected when the instrument is in image mode. Seven possible swaths in HH or VV polarisation are available. The product is primarily intended for use in SAR quality assessment and calibration, and can be used to derive higher level products.  The spatial coverage is about 100 km along track and 100 km across track, and the radiometric resolution is 1 look in azimuth, 1 look in range. The file size is 741 Mbytes. It is worth highlighting that Azimuth pixel spacing depends on Earth-Satellite relative velocity and actual PRF and slant range pixel spacing is given by ASAR sampling frequency (19.208 Mhz).  </dct:abstract>
+		<eop:platform>ENVISAT</eop:platform>
+		<eop:sensor>ASAR</eop:sensor>
+		<ical:dtstart>2002-10-21T08:13:28.350Z</ical:dtstart>
+		<ical:dtend>2022-02-26T08:26:09.501Z</ical:dtend>
+		<dct:spatial>POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))</dct:spatial>
+		<dc:subject>Radar Imagery, Solid Earth (Tectonics/Seismic Activity), Water (Water Management), Natural Disasters (Oil Slick), Land (Topography/Mapping,Soil,Vegetation) Ocean and Coast (Ocean Currents and Topography,Ocean Waves,Coastal Geomorphology)</dc:subject>
+		<dc:rights>Open Access</dc:rights>
+		<dc:format>N1 (ENVISAT)</dc:format>
+		<dclite4g:resolution>Approx 1000mx1000m</dclite4g:resolution>
+		<eop:processingLevel>Level 1</eop:processingLevel>
+		<dct:created>2011-01-21T11:05:29.511Z</dct:created>
+		<dct:modified>2015-01-16T12:43:04.879Z</dct:modified>
+	</dclite4g:Series>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20120226_082552_000000153112_00093_52262_0106.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20120226_082552_000000153112_00093_52262_0106.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20120226_082552_000000153112_00093_52262_0106.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20120226_082552_000000153112_00093_52262_0106.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>688934401</eop:size>
+		<eop:orbitNumber>52262</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2012-02-26T08:25:52.221Z</ical:dtstart>
+		<ical:dtend>2012-02-26T08:26:09.501Z</ical:dtend>
+		<eop:processingDate>2012-03-05T09:42:38.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.55215 36.97701,24.740512 37.091395,24.496927 35.950137,25.284346 35.839142,25.55215 36.97701)))</dct:spatial>
+		<eop:cycle>112</eop:cycle>
+		<dct:created>2012-04-19T20:23:43.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T18:23:43.858Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20120127_082550_000000153111_00093_51831_0036.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20120127_082550_000000153111_00093_51831_0036.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20120127_082550_000000153111_00093_51831_0036.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20120127_082550_000000153111_00093_51831_0036.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>688313576</eop:size>
+		<eop:orbitNumber>51831</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2012-01-27T08:25:50.431Z</ical:dtstart>
+		<ical:dtend>2012-01-27T08:26:07.711Z</ical:dtend>
+		<eop:processingDate>2012-02-06T10:00:47.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.557011 36.989105,24.746696 37.103384,24.502885 35.962141,25.288999 35.851273,25.557011 36.989105)))</dct:spatial>
+		<eop:cycle>111</eop:cycle>
+		<dct:created>2012-04-19T20:29:26.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T18:29:26.419Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNDPA20111228_082544_000000153110_00093_51400_2110.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNDPA20111228_082544_000000153110_00093_51400_2110.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNDPA20111228_082544_000000153110_00093_51400_2110.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNDPA20111228_082544_000000153110_00093_51400_2110.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>D-PAC </eop:processingCenter>
+		<eop:size>689058566</eop:size>
+		<eop:orbitNumber>51400</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-12-28T08:25:44.590Z</ical:dtstart>
+		<ical:dtend>2011-12-28T08:26:01.869Z</ical:dtend>
+		<eop:processingDate>2012-01-02T10:07:53.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.560216 36.998855,24.749813 37.113203,24.505821 35.971977,25.292016 35.861042,25.560216 36.998855)))</dct:spatial>
+		<eop:cycle>110</eop:cycle>
+		<dct:created>2012-04-19T19:51:27.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T17:51:27.909Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNDPA20111128_082538_000000153109_00093_50969_1895.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNDPA20111128_082538_000000153109_00093_50969_1895.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNDPA20111128_082538_000000153109_00093_50969_1895.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNDPA20111128_082538_000000153109_00093_50969_1895.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>D-PAC </eop:processingCenter>
+		<eop:size>686247554</eop:size>
+		<eop:orbitNumber>50969</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-11-28T08:25:37.930Z</ical:dtstart>
+		<ical:dtend>2011-11-28T08:25:55.209Z</ical:dtend>
+		<eop:processingDate>2011-12-05T18:03:08.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.529953 36.871481,24.720931 36.986005,24.462935 35.777605,25.247208 35.666577,25.529953 36.871481)))</dct:spatial>
+		<eop:cycle>109</eop:cycle>
+		<dct:created>2012-04-19T19:37:50.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T17:37:50.314Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20111031_071130_000000153108_00121_50566_4642.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20111031_071130_000000153108_00121_50566_4642.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20111031_071130_000000153108_00121_50566_4642.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20111031_071130_000000153108_00121_50566_4642.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/6.02     </eop:processorVersion>
+		<eop:processingCenter>GPOD  </eop:processingCenter>
+		<eop:size>664871144</eop:size>
+		<eop:orbitNumber>50566</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>121</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-10-31T07:11:30.312Z</ical:dtstart>
+		<ical:dtend>2011-10-31T07:11:46.547Z</ical:dtend>
+		<eop:processingDate>2013-09-26T09:33:39.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((44.230689 38.306677,43.40433 38.420613,43.171902 37.34662,43.973725 37.236056,44.230689 38.306677)))</dct:spatial>
+		<eop:cycle>108</eop:cycle>
+		<dct:created>2013-09-27T12:50:04.000Z</dct:created>
+		<dct:dateSubmitted>2013-09-27T11:50:05.277Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Hakkari; Van; Turkey; Sirnak; Western Asia; Dihok; Iraq</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20111031_071115_000000153108_00121_50566_4642.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20111031_071115_000000153108_00121_50566_4642.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20111031_071115_000000153108_00121_50566_4642.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20111031_071115_000000153108_00121_50566_4642.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/6.02     </eop:processorVersion>
+		<eop:processingCenter>GPOD  </eop:processingCenter>
+		<eop:size>665044275</eop:size>
+		<eop:orbitNumber>50566</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>121</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-10-31T07:11:15.266Z</ical:dtstart>
+		<ical:dtend>2011-10-31T07:11:31.500Z</ical:dtend>
+		<eop:processingDate>2013-09-26T09:36:14.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((44.433714 39.194082,43.596964 39.307624,43.362734 38.233701,44.174268 38.123574,44.433714 39.194082)))</dct:spatial>
+		<eop:cycle>108</eop:cycle>
+		<dct:created>2013-09-27T12:50:03.000Z</dct:created>
+		<dct:dateSubmitted>2013-09-27T11:50:04.057Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Van; Tendürek Dagi; Girekol Tepe; Turkey; West Azarbaijan; Western Asia; Iran; Ararat; Agri</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20111031_071114_000000153108_00121_50566_4642.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20111031_071114_000000153108_00121_50566_4642.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20111031_071114_000000153108_00121_50566_4642.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20111031_071114_000000153108_00121_50566_4642.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/6.02     </eop:processorVersion>
+		<eop:processingCenter>GPOD  </eop:processingCenter>
+		<eop:size>665242139</eop:size>
+		<eop:orbitNumber>50566</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>121</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-10-31T07:11:14.498Z</ical:dtstart>
+		<ical:dtend>2011-10-31T07:11:30.737Z</ical:dtend>
+		<eop:processingDate>2013-09-26T09:38:48.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((44.44722 39.253246,43.611238 39.366581,43.376859 38.292647,44.189065 38.182538,44.44722 39.253246)))</dct:spatial>
+		<eop:cycle>108</eop:cycle>
+		<dct:created>2013-09-27T12:50:02.000Z</dct:created>
+		<dct:dateSubmitted>2013-09-27T11:50:02.967Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Tendürek Dagi; Van; Girekol Tepe; Turkey; West Azarbaijan; Western Asia; Ararat; Iran; Agri</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20111029_082523_000000153108_00093_50538_4077.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20111029_082523_000000153108_00093_50538_4077.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20111029_082523_000000153108_00093_50538_4077.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20111029_082523_000000153108_00093_50538_4077.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>688239077</eop:size>
+		<eop:orbitNumber>50538</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-10-29T08:25:23.386Z</ical:dtstart>
+		<ical:dtend>2011-10-29T08:25:40.665Z</ical:dtend>
+		<eop:processingDate>2011-11-07T10:50:06.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.548461 36.941356,24.738697 37.055849,24.494553 35.914636,25.280153 35.803558,25.548461 36.941356)))</dct:spatial>
+		<eop:cycle>108</eop:cycle>
+		<dct:created>2012-04-19T20:20:25.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T18:20:25.435Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110929_082505_000000153107_00093_50107_4055.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20110929_082505_000000153107_00093_50107_4055.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110929_082505_000000153107_00093_50107_4055.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20110929_082505_000000153107_00093_50107_4055.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>685924851</eop:size>
+		<eop:orbitNumber>50107</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-09-29T08:25:05.152Z</ical:dtstart>
+		<ical:dtend>2011-09-29T08:25:22.431Z</ical:dtend>
+		<eop:processingDate>2011-10-28T07:37:11.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.586984 37.113091,24.775387 37.227567,24.530789 36.086394,25.318096 35.975344,25.586984 37.113091)))</dct:spatial>
+		<eop:cycle>107</eop:cycle>
+		<dct:created>2012-04-19T19:57:28.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T17:57:28.181Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110830_082447_000000153106_00093_49676_4056.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20110830_082447_000000153106_00093_49676_4056.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110830_082447_000000153106_00093_49676_4056.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20110830_082447_000000153106_00093_49676_4056.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>685900114</eop:size>
+		<eop:orbitNumber>49676</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-08-30T08:24:46.968Z</ical:dtstart>
+		<ical:dtend>2011-08-30T08:25:04.247Z</ical:dtend>
+		<eop:processingDate>2011-10-28T06:49:05.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.593722 37.16121,24.781627 37.27577,24.522668 36.067444,25.309793 35.956403,25.593722 37.16121)))</dct:spatial>
+		<eop:cycle>106</eop:cycle>
+		<dct:created>2012-04-19T19:50:24.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T17:50:24.148Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110731_082426_000000153105_00093_49245_4031.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20110731_082426_000000153105_00093_49245_4031.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110731_082426_000000153105_00093_49245_4031.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20110731_082426_000000153105_00093_49245_4031.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>688313576</eop:size>
+		<eop:orbitNumber>49245</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-07-31T08:24:26.567Z</ical:dtstart>
+		<ical:dtend>2011-07-31T08:24:43.846Z</ical:dtend>
+		<eop:processingDate>2011-10-17T11:06:23.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.556131 36.995571,24.74582 37.110187,24.501245 35.968991,25.287356 35.857793,25.556131 36.995571)))</dct:spatial>
+		<eop:cycle>105</eop:cycle>
+		<dct:created>2012-04-19T20:01:50.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T18:01:50.584Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110701_082401_000000153104_00093_48814_4032.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20110701_082401_000000153104_00093_48814_4032.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110701_082401_000000153104_00093_48814_4032.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20110701_082401_000000153104_00093_48814_4032.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>686098010</eop:size>
+		<eop:orbitNumber>48814</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-07-01T08:24:00.984Z</ical:dtstart>
+		<ical:dtend>2011-07-01T08:24:18.263Z</ical:dtend>
+		<eop:processingDate>2011-10-17T10:21:04.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.56689 37.038695,24.756129 37.153398,24.495809 35.945274,25.283099 35.833884,25.56689 37.038695)))</dct:spatial>
+		<eop:cycle>104</eop:cycle>
+		<dct:created>2012-04-19T19:52:42.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T17:52:42.367Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110502_082305_000000153102_00093_47952_4033.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNIPA20110502_082305_000000153102_00093_47952_4033.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNIPA20110502_082305_000000153102_00093_47952_4033.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNIPA20110502_082305_000000153102_00093_47952_4033.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>I-PAC </eop:processingCenter>
+		<eop:size>687062753</eop:size>
+		<eop:orbitNumber>47952</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>93</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-05-02T08:23:04.850Z</ical:dtstart>
+		<ical:dtend>2011-05-02T08:23:22.129Z</ical:dtend>
+		<eop:processingDate>2011-10-17T10:26:34.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((25.565134 37.026091,24.753086 37.141022,24.494134 35.932721,25.281291 35.821286,25.565134 37.026091)))</dct:spatial>
+		<eop:cycle>102</eop:cycle>
+		<dct:created>2012-04-19T19:53:56.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-19T17:53:56.425Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Santorini; Aegean Sea; Mílos; Notio Aigaio; Greece; Southeastern Europe</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004512_000000153101_00189_47617_0058.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110409_004512_000000153101_00189_47617_0058.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004512_000000153101_00189_47617_0058.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110409_004512_000000153101_00189_47617_0058.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>689444158</eop:size>
+		<eop:orbitNumber>47617</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>189</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-09T00:45:12.591Z</ical:dtstart>
+		<ical:dtend>2011-04-09T00:45:29.870Z</ical:dtend>
+		<eop:processingDate>2011-04-12T09:50:19.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((139.784911 36.119232,138.983832 36.234323,138.740698 35.093051,139.51821 34.981325,139.784911 36.119232)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T04:23:10.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T02:23:10.845Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Tokyo - Mount Fuji; Hakone; Saitama; Kanagawa; Tokyo; Fuji; Izu-Tobu; Honshu; Japan; Yamanashi; Eastern Asia; Oshima; Shizuoka; Akagi; Haruna; Gunma; Ibaraki; Philippine Sea; North Pacific Ocean; Chiba</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004457_000000153101_00189_47617_0057.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110409_004457_000000153101_00189_47617_0057.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004457_000000153101_00189_47617_0057.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110409_004457_000000153101_00189_47617_0057.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686716435</eop:size>
+		<eop:orbitNumber>47617</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>189</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-09T00:44:57.531Z</ical:dtstart>
+		<ical:dtend>2011-04-09T00:45:14.810Z</ical:dtend>
+		<eop:processingDate>2011-04-12T09:42:59.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((139.985362 37.007077,139.174944 37.121739,138.93021 35.980499,139.716425 35.869249,139.985362 37.007077)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T04:25:17.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T02:25:18.077Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Nantai; Omanago Group; Nikko-Shirane; Akagi; Tochigi; Hiuchi; Takahara; Saitama; Gunma; Tokyo - Mount Fuji; Haruna; Honshu; Nasu; Japan; Eastern Asia; Fukushima; Numazawa; Ibaraki; Niigata; Chiba</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004442_000000153101_00189_47617_0059.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110409_004442_000000153101_00189_47617_0059.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004442_000000153101_00189_47617_0059.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110409_004442_000000153101_00189_47617_0059.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686283866</eop:size>
+		<eop:orbitNumber>47617</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>189</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-09T00:44:42.346Z</ical:dtstart>
+		<ical:dtend>2011-04-09T00:44:59.626Z</ical:dtend>
+		<eop:processingDate>2011-04-12T10:00:15.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.1861 37.894883,139.365944 38.009124,139.119501 36.867944,139.914788 36.75716,140.1861 37.894883)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T04:20:01.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T02:20:02.001Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Numazawa; Fukushima; Nasu; Takahara; Bandai; Omanago Group; Hiuchi; Nantai; Nikko-Shirane; Azuma; Adatara; Honshu; Tochigi; Japan; Niigata; Eastern Asia; Yamagata; Akagi; Gunma; Zao</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004427_000000153101_00189_47617_0061.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110409_004427_000000153101_00189_47617_0061.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004427_000000153101_00189_47617_0061.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110409_004427_000000153101_00189_47617_0061.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686160201</eop:size>
+		<eop:orbitNumber>47617</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>189</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-09T00:44:27.293Z</ical:dtstart>
+		<ical:dtend>2011-04-09T00:44:44.572Z</ical:dtend>
+		<eop:processingDate>2011-04-12T10:03:24.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.390154 38.782255,139.55982 38.896109,139.311499 37.75498,140.116267 37.644632,140.390154 38.782255)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T03:52:07.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:52:07.416Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Yamagata; Hijiori; Niigata; Bandai; Azuma; Zao; Honshu; Japan; Tohoku; Chokai; Adatara; Numazawa; Eastern Asia; Fukushima; Narugo; Japan Sea; Kurikoma</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004412_000000153101_00189_47617_0060.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110409_004412_000000153101_00189_47617_0060.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004412_000000153101_00189_47617_0060.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110409_004412_000000153101_00189_47617_0060.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>687111089</eop:size>
+		<eop:orbitNumber>47617</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>189</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-09T00:44:12.000Z</ical:dtstart>
+		<ical:dtend>2011-04-09T00:44:29.279Z</ical:dtend>
+		<eop:processingDate>2011-04-12T09:36:55.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.596222 39.669381,139.753776 39.783053,139.503454 38.642002,140.319575 38.53187,140.596222 39.669381)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T03:58:08.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:58:09.047Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Chokai; Hijiori; Akita; Yamagata; Tohoku; Honshu; Megata; Japan; Eastern Asia; Narugo; Akita-Komaga-take; Kurikoma; Japan Sea; Akita-Yake-yama; Hachimantai; Zao; Iwate</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004357_000000153101_00189_47617_0062.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110409_004357_000000153101_00189_47617_0062.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110409_004357_000000153101_00189_47617_0062.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110409_004357_000000153101_00189_47617_0062.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>685715007</eop:size>
+		<eop:orbitNumber>47617</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>189</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-09T00:43:56.795Z</ical:dtstart>
+		<ical:dtend>2011-04-09T00:44:14.074Z</ical:dtend>
+		<eop:processingDate>2011-04-12T10:08:53.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.81769 40.619529,139.964843 40.732707,139.697573 39.52459,140.522537 39.415126,140.81769 40.619529)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T03:53:10.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:53:10.351Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Akita; Iwaki; Megata; Tohoku; Akita-Yake-yama; Akita-Komaga-take; Hachimantai; Aomori; Towada; Honshu; Hakkoda Group; Japan; Eastern Asia; Iwate; Chokai; Japan Sea</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110401_003601_000000273101_00074_47502_0056.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110401_003601_000000273101_00074_47502_0056.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110401_003601_000000273101_00074_47502_0056.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110401_003601_000000273101_00074_47502_0056.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>1209360929</eop:size>
+		<eop:orbitNumber>47502</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>74</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-04-01T00:36:00.789Z</ical:dtstart>
+		<ical:dtend>2011-04-01T00:39:02.790Z</ical:dtend>
+		<eop:processingDate>2011-04-01T03:09:52.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((-33.83587 4.24273,-33.185866 4.375587,-35.707614 16.573191,-36.371627 16.438346,-33.83587 4.24273)))</dct:spatial>
+		<eop:cycle>101</eop:cycle>
+		<dct:created>2012-04-20T03:55:16.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:55:16.350Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>North Atlantic Ocean</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004146_000000153100_00347_47344_0054.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004146_000000153100_00347_47344_0054.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004146_000000153100_00347_47344_0054.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004146_000000153100_00347_47344_0054.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686234400</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:41:46.561Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:42:03.840Z</ical:dtend>
+		<eop:processingDate>2011-03-21T13:04:40.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.42407 35.234185,139.633313 35.34961,139.391473 34.208315,140.160678 34.096021,140.42407 35.234185)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:51:04.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:51:04.312Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Oshima; Miyake-jima; To-shima; Chiba; Nii-jima; Tokyo - Mount Fuji; Mikura-jima; Kozu-shima; Honshu; Kanagawa; Japan; Eastern Asia; Izu-Tobu; North Pacific Ocean; Philippine Sea</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004131_000000153100_00347_47344_0053.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004131_000000153100_00347_47344_0053.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004131_000000153100_00347_47344_0053.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004131_000000153100_00347_47344_0053.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686593648</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:41:31.526Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:41:48.805Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:56:13.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.623023 36.122224,139.821922 36.237386,139.57863 35.096133,140.356163 34.984342,140.623023 36.122224)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:50:01.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:50:01.355Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Chiba; Tokyo - Mount Fuji; Ibaraki; Honshu; Japan; Eastern Asia; Tokyo; Kanagawa; Saitama; Oshima; North Pacific Ocean</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004116_000000153100_00347_47344_0052.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004116_000000153100_00347_47344_0052.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004116_000000153100_00347_47344_0052.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004116_000000153100_00347_47344_0052.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686963805</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:41:16.490Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:41:33.770Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:48:22.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((140.822159 37.010233,140.01173 37.124954,139.766859 35.983753,140.554498 35.872234,140.822159 37.010233)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:57:05.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:57:06.088Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Ibaraki; Tochigi; Tokyo - Mount Fuji; Nasu; Takahara; Honshu; Japan; Eastern Asia; Fukushima; Omanago Group; Nantai; Chiba; Saitama; Bandai; North Pacific Ocean</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004101_000000153100_00347_47344_0051.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004101_000000153100_00347_47344_0051.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004101_000000153100_00347_47344_0051.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004101_000000153100_00347_47344_0051.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686432264</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:41:01.304Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:41:18.583Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:40:47.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((141.024466 37.897812,140.204287 38.012126,139.957676 36.870968,140.752985 36.760116,141.024466 37.897812)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:54:13.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:54:13.433Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Fukushima; Adatara; Azuma; Bandai; Nasu; Zao; Honshu; Japan; Eastern Asia; Takahara; Tochigi; Miyagi; Ibaraki; Yamagata; Omanago Group; North Pacific Ocean</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004046_000000153100_00347_47344_0050.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004046_000000153100_00347_47344_0050.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004046_000000153100_00347_47344_0050.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004046_000000153100_00347_47344_0050.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686061269</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:40:46.249Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:41:03.529Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:37:04.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((141.228652 38.785152,140.396829 38.899262,140.148363 37.758174,140.954591 37.647557,141.228652 38.785152)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:25:59.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:25:59.239Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Miyagi; Zao; Narugo; Kurikoma; Azuma; Hijiori; Yamagata; Adatara; Honshu; Japan; Tohoku; Eastern Asia; Fukushima; Bandai; Chokai; Iwate; North Pacific Ocean; Akita</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004031_000000153100_00347_47344_0055.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004031_000000153100_00347_47344_0055.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004031_000000153100_00347_47344_0055.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004031_000000153100_00347_47344_0055.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686739794</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:40:31.156Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:40:48.435Z</ical:dtend>
+		<eop:processingDate>2011-03-21T13:08:02.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((141.43336 39.672441,140.592386 39.785994,140.341887 38.644967,141.156565 38.534974,141.43336 39.672441)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:21:58.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:21:58.346Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Kurikoma; Narugo; Iwate; Akita-Komaga-take; Tohoku; Iwate; Miyagi; Honshu; Akita; Hachimantai; Japan; Akita-Yake-yama; Eastern Asia; Hijiori; Yamagata; Chokai; Zao</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004016_000000153100_00347_47344_0048.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004016_000000153100_00347_47344_0048.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004016_000000153100_00347_47344_0048.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004016_000000153100_00347_47344_0048.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>685987070</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:40:15.945Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:40:33.224Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:31:53.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((141.656475 40.622358,140.802096 40.735792,140.534664 39.527721,141.361125 39.417986,141.656475 40.622358)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:27:02.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:27:02.637Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Iwate; Hachimantai; Akita-Yake-yama; Akita-Komaga-take; Towada; Iwate; Tohoku; Hakkoda Group; Aomori; Honshu; Akita; Japan; Eastern Asia; Iwaki; North Pacific Ocean</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004001_000000153100_00347_47344_0047.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_004001_000000153100_00347_47344_0047.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_004001_000000153100_00347_47344_0047.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_004001_000000153100_00347_47344_0047.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>683538503</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:40:00.910Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:40:18.189Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:28:32.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((141.867321 41.508927,141.00129 41.622052,140.731351 40.414064,141.568623 40.304699,141.867321 41.508927)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:23:53.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:23:53.205Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Osore-yama; Aomori; Hakkoda Group; Towada; Tohoku; E-san; Honshu; Japan; Eastern Asia; Japan Sea; Akita; Hachimantai; Iwate; Akita-Yake-yama; North Pacific Ocean; Iwaki</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_003946_000000153100_00347_47344_0046.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_003946_000000153100_00347_47344_0046.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_003946_000000153100_00347_47344_0046.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_003946_000000153100_00347_47344_0046.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686219460</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:39:45.836Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:40:03.116Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:22:27.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((142.080671 42.395229,141.202465 42.508072,140.928311 41.300376,141.77839 41.191157,142.080671 42.395229)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:20:54.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:20:54.351Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>E-san; Osore-yama; Kuttara; Shikotsu; Aomori; Usu; Komaga-take; Tohoku; Honshu; Japan; North Pacific Ocean; Eastern Asia; Japan Sea; Hokkaido</dc:coverage>
+	</dclite4g:DataSet>
+	<dclite4g:DataSet rdf:about="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_003931_000000153100_00347_47344_0045.N1/rdf">
+		<dc:identifier>ASA_IMS_1PNPDE20110321_003931_000000153100_00347_47344_0045.N1</dc:identifier>
+		<dclite4g:series rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/rdf" />
+		<dc:relation rdf:resource="http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNPDE20110321_003931_000000153100_00347_47344_0045.N1/related/rdf" />
+		<dclite4g:onlineResource>
+			<ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int/supersites/ASA_IMS_1PNPDE20110321_003931_000000153100_00347_47344_0045.N1" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>ASAR/5.04     </eop:processorVersion>
+		<eop:processingCenter>PDHS-E</eop:processingCenter>
+		<eop:size>686578803</eop:size>
+		<eop:orbitNumber>47344</eop:orbitNumber>
+		<eop:wrsLongitudeGrid>347</eop:wrsLongitudeGrid>
+		<ical:dtstart>2011-03-21T00:39:30.794Z</ical:dtstart>
+		<ical:dtend>2011-03-21T00:39:48.073Z</ical:dtend>
+		<eop:processingDate>2011-03-21T12:21:02.000Z</eop:processingDate>
+		<dct:spatial>MULTIPOLYGON(((142.295123 43.281451,141.404202 43.394025,141.128692 42.186256,141.989044 42.077562,142.295123 43.281451)))</dct:spatial>
+		<eop:cycle>100</eop:cycle>
+		<dct:created>2012-04-20T03:28:57.000Z</dct:created>
+		<dct:dateSubmitted>2012-04-20T01:28:57.269Z</dct:dateSubmitted>
+		<dct:modified>2015-01-16T11:08:39.168Z</dct:modified>
+		<eop:swathIdentifier>IS6</eop:swathIdentifier>
+		<eop:orbitDirection>DESCENDING</eop:orbitDirection>
+		<dc:coverage>Shikotsu; Kuttara; Hokkaido; Japan; Eastern Asia; Usu; E-san; Yotei; North Pacific Ocean; Tokachi; Japan Sea; Komaga-take</dc:coverage>
+	</dclite4g:DataSet>
+</rdf:RDF>
