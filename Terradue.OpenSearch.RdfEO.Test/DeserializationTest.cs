@@ -62,6 +62,27 @@ namespace Terradue.OpenSearch.RdfEO.Test {
             Assert.AreEqual(50962910768, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
 
         }
+
+        [Test()]
+        public void TestASA_IM__0P() {
+
+            FileStream cci = new FileStream("../samples/asa_im__0p.rdf", FileMode.Open);
+
+            RdfXmlDocument rdfDoc;
+
+            XmlReader reader = XmlReader.Create(cci);
+
+            rdfDoc = RdfXmlDocument.Load(reader);
+
+            SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+
+            Assert.AreEqual("257", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
+
+            Assert.AreEqual(193003137, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
+
+            rdfDoc.SerializeToString();
+
+        }
     }
 }
 
