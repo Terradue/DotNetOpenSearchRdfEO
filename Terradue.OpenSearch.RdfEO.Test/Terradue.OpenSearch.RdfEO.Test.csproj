@@ -70,6 +70,7 @@
     <None Include="samples\MER_FRS_1P.rdf" />
     <None Include="samples\asa_ims_1p.rdf" />
     <None Include="samples\alos_psr.rdf" />
+    <None Include="samples\asa_im__0p.rdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="samples\" />

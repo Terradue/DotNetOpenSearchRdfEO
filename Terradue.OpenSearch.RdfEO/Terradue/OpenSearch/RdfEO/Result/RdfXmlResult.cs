@@ -65,7 +65,9 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         public XElement GetElement() {
             XElement root = new XElement(XName.Get("DataSet", RdfXmlDocument.dclite4gns.NamespaceName));
             root.SetAttributeValue(XName.Get("about", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"), Id);
-            root.Add(new XElement(XName.Get("title", "http://purl.org/dc/elements/1.1/"), Title.Text));
+            if (Title != null) {
+                root.Add(new XElement(XName.Get("title", "http://purl.org/dc/elements/1.1/"), Title.Text));
+            }
             root.Add(new XElement(XName.Get("updated", "http://purl.org/dc/elements/1.1/"), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("created", "http://purl.org/dc/elements/1.1/"), PublishDate.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), Identifier));
