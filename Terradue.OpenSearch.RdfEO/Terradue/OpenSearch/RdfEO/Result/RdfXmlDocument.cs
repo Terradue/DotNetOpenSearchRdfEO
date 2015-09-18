@@ -52,9 +52,14 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             LoadDescription(descr);
 
             series = rdf.Element(dclite4gns + "Series");
-            this.Identifier = series.Element(XName.Get("identifier", dcns.ToString())).Value;
 
+            if (series != null) {
+
+                if (series.Element(XName.Get("identifier", dcns.ToString())) != null)
+                    this.Identifier = series.Element(XName.Get("identifier", dcns.ToString())).Value;
+            }
             IEnumerable<XElement> datasets = rdf.Elements(dclite4gns + "DataSet");
+
 
             items = LoadItems(datasets);
 
@@ -94,7 +99,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
                                   new XElement(dcns + "identifier", Identifier),
                                   new XElement(dcns + "title", Title.Text),
                                   new XAttribute(rdfns + "about", Id)
-                                 );
+            );
 
         }
 
@@ -130,12 +135,12 @@ namespace Terradue.OpenSearch.RdfEO.Result {
 
         public XElement GetDescription() {
             XElement description = new XElement(XName.Get("Description", rdfns.NamespaceName));
-            foreach ( var link in Links ) {
+            foreach (var link in Links) {
                 XElement atomlink = new XElement(XName.Get("link", RdfXmlDocument.atomns.NamespaceName));
                 atomlink.SetAttributeValue(XName.Get("rel", RdfXmlDocument.atomns.NamespaceName), link.RelationshipType);
                 atomlink.SetAttributeValue(XName.Get("type", RdfXmlDocument.atomns.NamespaceName), link.MediaType);
                 atomlink.SetAttributeValue(XName.Get("href", RdfXmlDocument.atomns.NamespaceName), link.Uri);
-                if ( link.Length > 0 )
+                if (link.Length > 0)
                     atomlink.SetAttributeValue(XName.Get("length", RdfXmlDocument.atomns.NamespaceName), link.Length);
                 description.Add(atomlink);
             }
@@ -252,6 +257,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         }
 
         IOpenSearchable openSearchable;
+
         public IOpenSearchable OpenSearchable {
             get {
                 return openSearchable;
@@ -262,6 +268,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         }
 
         NameValueCollection parameters;
+
         public NameValueCollection Parameters {
             get {
                 return parameters;
@@ -272,6 +279,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         }
 
         TimeSpan duration;
+
         public TimeSpan QueryTimeSpan {
             get {
                 var duration = ElementExtensions.ReadElementExtensions<double>("queryTime", "http://purl.org/dc/elements/1.1/");
@@ -391,6 +399,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
 
 
         readonly Collection<SyndicationPerson> contributors;
+
         public Collection<SyndicationPerson> Contributors {
             get {
                 return contributors;
@@ -398,6 +407,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         }
 
         TextSyndicationContent copyright;
+
         public TextSyndicationContent Copyright {
             get {
                 return copyright;
@@ -408,6 +418,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         }
 
         TextSyndicationContent description;
+
         public TextSyndicationContent Description {
             get {
                 return description;
@@ -418,6 +429,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
         }
 
         string generator;
+
         public string Generator {
             get {
                 return generator;

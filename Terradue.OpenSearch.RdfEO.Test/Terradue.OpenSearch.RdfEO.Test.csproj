@@ -71,6 +71,8 @@
     <None Include="samples\asa_ims_1p.rdf" />
     <None Include="samples\alos_psr.rdf" />
     <None Include="samples\asa_im__0p.rdf" />
+    <None Include="samples\ER02_SAR_IM__0P.rdf" />
+    <None Include="samples\rdf2.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="samples\" />
