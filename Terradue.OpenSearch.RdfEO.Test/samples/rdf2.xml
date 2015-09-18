@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/">
+  <rdf:Description>
+    <atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?uid=ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000&amp;count=20&amp;format=rdf" />
+    <atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description" />
+    <atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?uid=ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000&amp;count=20&amp;format=rdf" xmlns:atom="http://www.w3.org/2005/Atom" />
+    <atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/description" xmlns:atom="http://www.w3.org/2005/Atom" />
+    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Terradue.ServiceModel.Syndication.TextSyndicationContent</dc:title>
+    <dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2015-06-26T11:49:00.7Z</dc:date>
+    <queryTime xmlns="http://purl.org/dc/elements/1.1/">346.501</queryTime>
+    <startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+    <itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">20</itemsPerPage>
+    <os:Query xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" geo:uid="ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000" os:count="20" />
+    <dc:title />
+    <dc:date>2015-06-26T11:49:00.9Z</dc:date>
+  </rdf:Description>
+  <dclite4g:DataSet rdf:about="https://data.terradue.com/gs/catalogue/tepqw/gtfeature/search?format=rdf&amp;uid=ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000" xmlns:ical="http://www.w3.org/2002/12/cal/ical#" xmlns:dct="http://purl.org/dc/terms/">
+    <dc:title>Terradue.ServiceModel.Syndication.TextSyndicationContent</dc:title>
+    <dc:date>2014-02-11T11:28:58.000Z</dc:date>
+    <dc:identifier>ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000</dc:identifier>
+    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Terradue.ServiceModel.Syndication.TextSyndicationContent</dc:title>
+    <dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">2014-02-11T10:28:58.000Z</dc:date>
+    <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/">ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000</dc:identifier>
+    <identifier xmlns="http://purl.org/dc/elements/1.1/">ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000</identifier>
+    <polygon xmlns="http://www.georss.org/georss">37.700272 16.035964 37.897791 14.862766 36.765306 14.568539 36.576319 15.692233 37.700272 16.035964 </polygon>
+    <date xmlns="http://purl.org/dc/elements/1.1/">1993-09-19T09:41:44.564Z/1993-09-19T09:42:01.951Z</date>
+    <eop:EarthObservation xmlns:eop="http://www.opengis.net/eop/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:gml="http://www.opengis.net/gml">
+      <om:phenomenonTime>
+        <gml:TimePeriod>
+          <gml:beginPosition>1993-09-19T09:41:44.564Z</gml:beginPosition>
+          <gml:endPosition>1993-09-19T09:42:01.951Z</gml:endPosition>
+        </gml:TimePeriod>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant>
+          <gml:timePosition>1993-09-19T09:41:44.564Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure>
+        <eop:EarthObservationEquipment>
+          <eop:platform>
+            <eop:Platform>
+              <eop:shortName>ERS-1</eop:shortName>
+              <eop:serialIdentifier>ERS-1</eop:serialIdentifier>
+            </eop:Platform>
+          </eop:platform>
+          <eop:instrument>
+            <eop:Instrument>
+              <eop:shortName>SAR</eop:shortName>
+              <eop:description>ERS-1 SAR Image Mode source packets Level 0 (ER01_SAR_IM__0P)</eop:description>
+            </eop:Instrument>
+          </eop:instrument>
+          <eop:sensor>
+            <eop:Sensor>
+              <eop:swathIdentifier>IS2</eop:swathIdentifier>
+            </eop:Sensor>
+          </eop:sensor>
+          <eop:acquisitionParameters>
+            <eop:Acquisition>
+              <eop:orbitNumber>11389</eop:orbitNumber>
+              <eop:orbitDirection>DESCENDING</eop:orbitDirection>
+              <eop:wrsLongitudeGrid>222</eop:wrsLongitudeGrid>
+              <eop:cycle>30</eop:cycle>
+              <eop:polarisationChannels>VV</eop:polarisationChannels>
+            </eop:Acquisition>
+          </eop:acquisitionParameters>
+        </eop:EarthObservationEquipment>
+      </om:procedure>
+      <eop:metaDataProperty>
+        <eop:EarthObservationMetaData>
+          <eop:identifier>ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000</eop:identifier>
+          <eop:creationDate>2014-02-11T10:28:58Z</eop:creationDate>
+          <eop:parentIdentifier>ER01_SAR_IM__0P</eop:parentIdentifier>
+        </eop:EarthObservationMetaData>
+      </eop:metaDataProperty>
+    </eop:EarthObservation>
+    <where xmlns="http://www.georss.org/georss">
+      <MultiSurface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/gml/3.2">
+        <surfaceMembers>
+          <Polygon>
+            <exterior>
+              <LinearRing>
+                <posList srsDimension="2" count="5">37.700272 16.035964 37.897791 14.862766 36.765306 14.568539 36.576319 15.692233 37.700272 16.035964</posList>
+              </LinearRing>
+            </exterior>
+          </Polygon>
+        </surfaceMembers>
+      </MultiSurface>
+    </where>
+    <date xmlns="http://purl.org/dc/elements/1.1/">1993-09-19T09:41:44.5640000Z/1993-09-19T09:42:01.9510000Z</date>
+    <spatial xmlns="http://purl.org/dc/terms/">POLYGON((16.035964 37.700272,14.862766 37.897791,14.568539 36.765306,15.692233 36.576319,16.035964 37.700272))</spatial>
+    <dclite4g:onlineResource xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#">
+      <ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int:443/supersites/ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000.CEOS.tar.gz" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+    </dclite4g:onlineResource>
+    <dclite4g:onlineResource xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#">
+      <ws:HTTPS rdf:about="https://eo-virtual-archive4.esa.int:443/supersites/ER01_SAR_IM__0P_19930919T094144_19930919T094201_IPA_11389_0000.CEOS.tar.gz" />
+    </dclite4g:onlineResource>
+  </dclite4g:DataSet>
+</rdf:RDF>

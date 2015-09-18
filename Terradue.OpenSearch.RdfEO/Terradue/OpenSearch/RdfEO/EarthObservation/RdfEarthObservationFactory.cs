@@ -447,7 +447,7 @@ namespace Terradue.OpenSearch.RdfEO {
             metadata.EarthObservationMetaData = new EarthObservationMetaDataType();
             metadata.EarthObservationMetaData.acquisitionType = AcquisitionTypeValueType.NOMINAL;
             metadata.EarthObservationMetaData.parentIdentifier = seriesid;
-            metadata.EarthObservationMetaData.identifier = identifier;
+            metadata.EarthObservationMetaData.identifier = identifier.Replace(".N1","");
 
             var pcenter = rdf.Element(XName.Get("processingCenter", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var pversion = rdf.Element(XName.Get("processorVersion", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));

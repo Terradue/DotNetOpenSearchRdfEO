@@ -82,6 +82,51 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc.SerializeToString();
 
+
+
+        }
+
+        [Test()]
+        public void TestER02_SAR_IM__0P() {
+
+            FileStream cci = new FileStream("../samples/ER02_SAR_IM__0P.rdf", FileMode.Open);
+
+            RdfXmlDocument rdfDoc;
+
+            XmlReader reader = XmlReader.Create(cci);
+
+            rdfDoc = RdfXmlDocument.Load(reader);
+
+            SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+
+            Assert.AreEqual("336", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
+
+            Assert.AreEqual(0, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
+
+            rdfDoc.SerializeToString();
+
+
+
+        }
+
+
+        [Test()]
+        public void TestRDF2() {
+
+            FileStream cci = new FileStream("../samples/rdf2.xml", FileMode.Open);
+
+            RdfXmlDocument rdfDoc;
+
+            XmlReader reader = XmlReader.Create(cci);
+
+            rdfDoc = RdfXmlDocument.Load(reader);
+
+            Terradue.Metadata.EarthObservation.Ogc.Eop20.EarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.Metadata.EarthObservation.Ogc.Eop20.EarthObservationType>("EarthObservation", MetadataHelpers.EOP20, MetadataHelpers.EopSerializer20)[0];
+
+            rdfDoc.SerializeToString();
+
+
+
         }
     }
 }
