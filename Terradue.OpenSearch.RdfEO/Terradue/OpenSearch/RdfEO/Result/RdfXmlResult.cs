@@ -86,6 +86,8 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             root.Add(new XElement(XName.Get("modified", "http://purl.org/dc/terms/"), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("created", "http://purl.org/dc/terms/"), PublishDate.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), Identifier));
+            root.Add(new XElement(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindStartDateFromOpenSearchResultItem(this)));
+            root.Add(new XElement(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindEndDateFromOpenSearchResultItem(this)));
 
             XElement exts = XElement.Load(ElementExtensions.GetReaderAtExtensionWrapper());
             root.Add(exts.Elements());
