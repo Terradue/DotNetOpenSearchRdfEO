@@ -14,6 +14,7 @@ using Terradue.Metadata.EarthObservation.Ogc.Opt;
 using Terradue.Metadata.EarthObservation.Ogc.Alt;
 using Terradue.Metadata.EarthObservation;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Terradue.OpenSearch.RdfEO {
     public class RdfEarthObservationFactory {
@@ -448,6 +449,7 @@ namespace Terradue.OpenSearch.RdfEO {
             metadata.EarthObservationMetaData.acquisitionType = AcquisitionTypeValueType.NOMINAL;
             metadata.EarthObservationMetaData.parentIdentifier = seriesid;
             metadata.EarthObservationMetaData.identifier = identifier.Replace(".N1","");
+            metadata.EarthObservationMetaData.productType = GetProductType(seriesid);
 
             var pcenter = rdf.Element(XName.Get("processingCenter", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var pversion = rdf.Element(XName.Get("processorVersion", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
@@ -528,6 +530,21 @@ namespace Terradue.OpenSearch.RdfEO {
 
 
             return feature;
+        }
+
+        public static string GetProductType(string seriesid){
+            if (seriesid != null) {
+
+                Regex regex = new Regex("(ER0[1-2]_)?(SAR|ASA)_(?<type>[^_]*)_*([0-3].?)");
+                Match match = regex.Match(seriesid);
+
+                if (match.Success) {
+                    return match.Groups["type"].Value;
+                }
+
+            }
+
+            return null;
         }
     }
 }

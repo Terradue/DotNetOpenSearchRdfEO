@@ -42,6 +42,9 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             Assert.AreEqual("IS6", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.sensor.Sensor.swathIdentifier.Text[0]);
 
+            Assert.AreEqual("IMS", saEO.metaDataProperty1.EarthObservationMetaData.productType);
+
+
         }
 
         [Test()]
@@ -103,6 +106,8 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             Assert.AreEqual(0, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
 
+
+
             rdfDoc.SerializeToString();
 
 
@@ -128,6 +133,26 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
 
         }
+
+        [Test()]
+        public void TestRDF3() {
+
+            FileStream cci = new FileStream("../samples/rdf3.xml", FileMode.Open);
+
+            RdfXmlDocument rdfDoc;
+
+            XmlReader reader = XmlReader.Create(cci);
+
+            rdfDoc = RdfXmlDocument.Load(reader);
+
+            Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+
+
+            rdfDoc.SerializeToString();
+
+
+
+        }   
     }
 }
 
