@@ -90,7 +90,11 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             root.Add(new XElement(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindEndDateFromOpenSearchResultItem(this)));
 
             XElement exts = XElement.Load(ElementExtensions.GetReaderAtExtensionWrapper());
-            root.Add(exts.Elements());
+            foreach (var ext in exts.Elements()) {
+                if (ext.Name.LocalName == "date")
+                    continue;
+                root.Add(ext);
+            }
             if (exts.Descendants(XName.Get("beginPosition", "http://www.opengis.net/gml/3.2")).Count() > 0) {
                 root.Add(new XElement(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"), exts.Descendants(XName.Get("beginPosition", "http://www.opengis.net/gml/3.2")).First().Value));
             }
