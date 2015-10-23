@@ -34,6 +34,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             elementExtensions = item.ElementExtensions;
             links = item.Links;
 
+            this.SortKey = item.SortKey;
         }
 
         public RdfXmlResult(XElement root, XElement series) : base() {
@@ -279,6 +280,17 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             }
         }
 
+        string sortKey;
+        public string SortKey {
+            get {
+                if (sortKey == null)
+                    return LastUpdatedTime.ToUniversalTime().ToString("O");
+                return sortKey.ToString();
+            }
+            set {
+                sortKey = value;
+            }
+        }
         #endregion
 
 
