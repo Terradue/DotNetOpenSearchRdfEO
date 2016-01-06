@@ -47,6 +47,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             if (root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")) != null)
                 Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
             //
+            elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
             if (root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ALT)) == null
                 && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ALT20)) == null
                 && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ATM)) == null
@@ -62,8 +63,6 @@ namespace Terradue.OpenSearch.RdfEO.Result {
                 && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.SSP)) == null
                 && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.SSP20)) == null) {
                 ElementExtensions.Add(BuildEarthObservationReader(root, series));
-            } else {
-                elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
             }
             links = new Collection<SyndicationLink>();
             if (root.Attribute(XName.Get("about", RdfXmlDocument.rdfns.NamespaceName)) != null) {
@@ -222,6 +221,18 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             }
         }
 
+        string sortKey;
+        public string SortKey {
+            get {
+                if (sortKey == null)
+                    return LastUpdatedTime.ToUniversalTime().ToString("O");
+                return sortKey.ToString();
+            }
+            set {
+                sortKey = value;
+            }
+        }
+
         readonly Collection<SyndicationCategory> categories = new Collection<SyndicationCategory>();
 
         public Collection<SyndicationCategory> Categories {
@@ -277,18 +288,6 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             }
             set {
                 content = value;
-            }
-        }
-
-        string sortKey;
-        public string SortKey {
-            get {
-                if (sortKey == null)
-                    return LastUpdatedTime.ToUniversalTime().ToString("O");
-                return sortKey.ToString();
-            }
-            set {
-                sortKey = value;
             }
         }
         #endregion
