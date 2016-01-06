@@ -19,7 +19,7 @@ using System.Text.RegularExpressions;
 namespace Terradue.OpenSearch.RdfEO {
     public class RdfEarthObservationFactory {
 
-        public static XmlReader GetXmlReaderEarthObservationTypeFromRdf(XElement rdf, XElement series){
+        public static XmlReader GetXmlReaderEarthObservationTypeFromRdf(XElement rdf, XElement series) {
 
             var eo = GetEarthObservationTypeFromRdf(rdf, series);
 
@@ -34,7 +34,7 @@ namespace Terradue.OpenSearch.RdfEO {
             return XmlReader.Create(ms);
 
         }
-        
+
         public static EarthObservationType GetEarthObservationTypeFromRdf(XElement rdf, XElement series) {
             
             EarthObservationType eo = new EarthObservationType();
@@ -75,17 +75,22 @@ namespace Terradue.OpenSearch.RdfEO {
                     case "GOMOS":
                     case "GOME":
                         throw new NotImplementedException();
-                        //return GetAtmEarthObservationTypeFromRdf(rdf);
-                    
-                    default:
-                        return GetGenericEarthObservationTypeFromRdf(rdf, series);
+                //return GetAtmEarthObservationTypeFromRdf(rdf);
+
 
                 }
                     
             }
 
-           
-            return eo;
+            var identifier = rdf.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"));
+
+            if (identifier != null) {
+                if (identifier.Value.StartsWith("S1A")) {
+                    return GetSarEarthObservationTypeFromRdf(rdf, series); 
+                }
+            }
+
+            return GetGenericEarthObservationTypeFromRdf(rdf, series);
         }
 
         public static EarthObservationType GetGenericEarthObservationTypeFromRdf(XElement rdf, XElement series) {
@@ -184,7 +189,7 @@ namespace Terradue.OpenSearch.RdfEO {
             var subject = series.Element(XName.Get("subject", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var sensor = series.Element(XName.Get("sensor", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
-            EarthObservationEquipmentPropertyType earthObservationEquipment = new SarEarthObservationEquipmentPropertyType();
+            EarthObservationEquipmentPropertyType earthObservationEquipment = new EarthObservationEquipmentPropertyType();
             earthObservationEquipment.EarthObservationEquipment = new EarthObservationEquipmentType();
 
             earthObservationEquipment.EarthObservationEquipment.platform = GetPlatformFromRdf(rdf, series);
@@ -229,7 +234,7 @@ namespace Terradue.OpenSearch.RdfEO {
 
             var polc = rdf.Element(XName.Get("polarisationChannels", "http://earth.esa.int/sar"));
 
-            if (polc != null )
+            if (polc != null)
                 sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.polarisationChannels = polc.Value;
 
             return sarEarthObservationEquipment;
@@ -325,6 +330,9 @@ namespace Terradue.OpenSearch.RdfEO {
 
             var sensor = series.Element(XName.Get("sensor", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
+            if (sensor == null)
+                return null;
+
             InstrumentPropertyType instrument = new InstrumentPropertyType();
             instrument.Instrument = new InstrumentType();
             instrument.Instrument.shortName = sensor.Value;
@@ -349,7 +357,7 @@ namespace Terradue.OpenSearch.RdfEO {
 
             if (seriesid != null) {
 
-                switch (seriesid.Value){
+                switch (seriesid.Value) {
 
                     case "ER01_SAR_RAW_0P":
                     case "ER01_SAR_SLC_1P":
@@ -393,7 +401,7 @@ namespace Terradue.OpenSearch.RdfEO {
             
         }
 
-        public static AcquisitionType GetAcquisitionFromRdf(XElement rdf, XElement series){
+        public static AcquisitionType GetAcquisitionFromRdf(XElement rdf, XElement series) {
             
             var orbitn = rdf.Element(XName.Get("orbitNumber", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var orbitd = rdf.Element(XName.Get("orbitDirection", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
@@ -405,12 +413,12 @@ namespace Terradue.OpenSearch.RdfEO {
             if (orbitn != null)
                 acq.orbitNumber = orbitn.Value;
 
-            if (track != null){
+            if (track != null) {
                 acq.wrsLongitudeGrid = new Terradue.GeoJson.Gml.CodeWithAuthorityType();
                 acq.wrsLongitudeGrid.Value = track.Value;
             }
 
-            if (wrslog != null){
+            if (wrslog != null) {
                 acq.wrsLongitudeGrid = new Terradue.GeoJson.Gml.CodeWithAuthorityType();
                 acq.wrsLongitudeGrid.Value = wrslog.Value;
             }
@@ -425,7 +433,7 @@ namespace Terradue.OpenSearch.RdfEO {
         public static TimeObjectPropertyType GetEOPhenomenonTypeFromRdf(XElement rdf, XElement series) {
 
             var start = rdf.Element(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"));
-                                    var end = rdf.Element(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"));
+            var end = rdf.Element(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"));
 
 
             TimeObjectPropertyType phenomenon = new Terradue.Metadata.EarthObservation.Ogc.Om.TimeObjectPropertyType();
@@ -448,7 +456,7 @@ namespace Terradue.OpenSearch.RdfEO {
             metadata.EarthObservationMetaData = new EarthObservationMetaDataType();
             metadata.EarthObservationMetaData.acquisitionType = AcquisitionTypeValueType.NOMINAL;
             metadata.EarthObservationMetaData.parentIdentifier = seriesid;
-            metadata.EarthObservationMetaData.identifier = identifier.Replace(".N1","");
+            metadata.EarthObservationMetaData.identifier = identifier.Replace(".N1", "");
             metadata.EarthObservationMetaData.productType = GetProductType(seriesid);
 
             var pcenter = rdf.Element(XName.Get("processingCenter", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
@@ -461,7 +469,7 @@ namespace Terradue.OpenSearch.RdfEO {
 
             if (pcenter != null) {
                 processing.ProcessingInformation.processingCenter = new Terradue.GeoJson.Gml.CodeListType();
-                processing.ProcessingInformation.processingCenter.Text = new string[]{ pcenter.Value};
+                processing.ProcessingInformation.processingCenter.Text = new string[]{ pcenter.Value };
             }
 
             if (pversion != null) {
@@ -532,7 +540,7 @@ namespace Terradue.OpenSearch.RdfEO {
             return feature;
         }
 
-        public static string GetProductType(string seriesid){
+        public static string GetProductType(string seriesid) {
             if (seriesid != null) {
 
                 Regex regex = new Regex("(ER0[1-2]_)?(SAR|ASA)_(?<type>[^_]*)_*([0-3].?)");

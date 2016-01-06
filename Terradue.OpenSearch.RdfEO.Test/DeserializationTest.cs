@@ -153,6 +153,26 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
 
         }   
+
+        [Test()]
+        public void TestS1A() {
+
+            FileStream cci = new FileStream("../samples/s1a.rdf", FileMode.Open);
+
+            RdfXmlDocument rdfDoc;
+
+            XmlReader reader = XmlReader.Create(cci);
+
+            rdfDoc = RdfXmlDocument.Load(reader);
+
+            Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+
+
+            rdfDoc.SerializeToString();
+
+
+
+        }   
     }
 }
 
