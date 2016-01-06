@@ -74,6 +74,7 @@
     <None Include="samples\ER02_SAR_IM__0P.rdf" />
     <None Include="samples\rdf2.xml" />
     <None Include="samples\rdf3.xml" />
+    <None Include="samples\s1a.rdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="samples\" />

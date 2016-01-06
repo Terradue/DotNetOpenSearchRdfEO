@@ -1,0 +1,43 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/">
+  <rdf:Description rdf:about="https://data2.terradue.com:443/eop/scihub/dataset/search?uid=S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1&amp;format=rdf">
+    <atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="https://data2.terradue.com/eop/scihub/dataset/search?uid=S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1&amp;format=rdf" />
+    <atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="https://data2.terradue.com/eop/scihub/dataset/description" />
+    <totalResults xmlns="http://a9.com/-/spec/opensearch/1.1/">1</totalResults>
+    <startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+    <itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">20</itemsPerPage>
+    <os:Query xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:eop="http://www.opengis.net/eop/2.0" xmlns:t2="http://www.terradue.com/opensearch" geo:uid="S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1" />
+    <dc:title>Terradue.ServiceModel.Syndication.TextSyndicationContent</dc:title>
+    <dc:date>2016-01-06T08:55:43.8Z</dc:date>
+  </rdf:Description>
+  <dclite4g:Series rdf:about="https://data2.terradue.com:443/eop/scihub/dataset/search?uid=S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1&amp;format=rdf">
+    <dc:identifier>https://data2.terradue.com:443/eop/scihub/dataset/search?uid=S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1&amp;format=rdf</dc:identifier>
+    <dc:title></dc:title>
+  </dclite4g:Series>
+  <dclite4g:DataSet rdf:about="https://data2.terradue.com/eop/scihub/dataset/search?format=rdf&amp;uid=S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1" xmlns:ical="http://www.w3.org/2002/12/cal/ical#" xmlns:dct="http://purl.org/dc/terms/">
+    <dc:title>S1A SLC IW_DP L1 VV, VH 175 151117T043127-151117T043155</dc:title>
+    <dct:modified>2015-11-17T10:22:00.417Z</dct:modified>
+    <dct:created>0001-01-01T12:00:00.000Z</dct:created>
+    <dc:identifier>S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1</dc:identifier>
+    <ical:dtstart>2015-11-17T16:31:27.924854Z</ical:dtstart>
+    <ical:dtend>2015-11-17T16:31:55.82903Z</ical:dtend>
+    <identifier xmlns="http://purl.org/dc/elements/1.1/">S1A_IW_SLC__1SDV_20151117T163127_20151117T163155_008647_00C499_5DC1</identifier>
+    <where xmlns="http://www.georss.org/georss">
+      <MultiSurface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/gml/3.2">
+        <surfaceMembers>
+          <Polygon>
+            <exterior>
+              <LinearRing>
+                <posList srsDimension="2" count="5">39.010857 19.826822 39.408596 22.742575 37.732426 23.087086 37.333385 20.240656 39.010857 19.826822</posList>
+              </LinearRing>
+            </exterior>
+          </Polygon>
+        </surfaceMembers>
+      </MultiSurface>
+    </where>
+    <spatial xmlns="http://purl.org/dc/terms/">MULTIPOLYGON(((19.826822 39.010857,22.742575 39.408596,23.087086 37.732426,20.240656 37.333385,19.826822 39.010857)))</spatial>
+    <dclite4g:onlineResource xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#">
+      <ws:HTTPS rdf:about="https://scihub.esa.int:443/apihub/odata/v1/Products('44d02edc-d7dc-423c-ba97-14acabef9320')/$value" />
+    </dclite4g:onlineResource>
+    <size xmlns="http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/">4572614576</size>
+  </dclite4g:DataSet>
+</rdf:RDF>
