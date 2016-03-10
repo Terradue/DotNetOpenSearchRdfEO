@@ -470,7 +470,6 @@ namespace Terradue.OpenSearch.RdfEO.Result {
                 if (element.Name.Namespace == "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"
                     || element.Name.Namespace == "http://xmlns.com/2008/dclite4g#"
                     || element.Name.Namespace == "http://earth.esa.int/sar"
-                    || element.Name.Namespace == "http://www.w3.org/2002/12/cal/ical#"
                     || element.Name.Namespace == "http://dclite4g.xmlns.com/ws.rdf#"
                     || element.Name.Namespace == "http://a9.com/-/opensearch/extensions/sru/2.0/")
                     continue;
