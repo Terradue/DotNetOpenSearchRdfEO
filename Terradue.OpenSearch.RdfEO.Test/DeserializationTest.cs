@@ -83,6 +83,8 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             Assert.AreEqual(193003137, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
 
+            Assert.AreEqual("2012-04-07T18:20:55.040Z", rdfDoc.Datasets[0].ElementExtensions.FirstOrDefault(e => e.OuterName == "dtend").GetObject<string>());
+
             rdfDoc.SerializeToString();
 
 
