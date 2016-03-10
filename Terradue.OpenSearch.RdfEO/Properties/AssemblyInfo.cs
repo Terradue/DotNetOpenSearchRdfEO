@@ -16,8 +16,8 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyAuthors("Emmanuel Mathot")]
 [assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchRdfEO")]
 [assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchRdfEO/blob/master/LICENSE")]
-[assembly: AssemblyVersion("1.3.6.*")]
-[assembly: AssemblyInformationalVersion("1.3.6")]
+[assembly: AssemblyVersion("1.3.7.*")]
+[assembly: AssemblyInformationalVersion("1.3.7")]
 
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
