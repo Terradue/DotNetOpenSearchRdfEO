@@ -1,29 +1,25 @@
 ﻿using System;
-using Terradue.Metadata.EarthObservation.Ogc.Eop;
 using Terradue.ServiceModel.Syndication;
 using System.Xml.Linq;
-using Terradue.Metadata.EarthObservation.Ogc.Sar;
 using Terradue.OpenSearch.Result;
 using System.Xml;
 using Terradue.OpenSearch.RdfEO.Result;
-using Terradue.Metadata.EarthObservation.Ogc.Om;
 using System.Collections.Generic;
 using Terradue.GeoJson.Geometry;
 using System.Xml.Serialization;
-using Terradue.Metadata.EarthObservation.Ogc.Opt;
-using Terradue.Metadata.EarthObservation.Ogc.Alt;
 using Terradue.Metadata.EarthObservation;
 using System.IO;
 using System.Text.RegularExpressions;
+using Terradue.ServiceModel.Ogc;
 
 namespace Terradue.OpenSearch.RdfEO {
     public class RdfEarthObservationFactory {
 
         public static XmlReader GetXmlReaderEarthObservationTypeFromRdf(XElement rdf, XElement series) {
 
-            var eo = GetEarthObservationTypeFromRdf(rdf, series);
+            var eo = GetEarthObservationFromRdf(rdf, series);
 
-            var ser = MetadataHelpers.GetXmlSerializerFromType(eo.GetType());
+            var ser = OgcHelpers.GetXmlSerializerFromType(eo.GetType());
 
             MemoryStream ms = new MemoryStream();
 
@@ -35,9 +31,9 @@ namespace Terradue.OpenSearch.RdfEO {
 
         }
 
-        public static EarthObservationType GetEarthObservationTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.EarthObservationType GetEarthObservationFromRdf(XElement rdf, XElement series) {
             
-            EarthObservationType eo = new EarthObservationType();
+            Terradue.ServiceModel.Ogc.Eop21.EarthObservationType eo = new Terradue.ServiceModel.Ogc.Eop21.EarthObservationType();
 
             var sensor = series.Element(XName.Get("sensor", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
@@ -53,7 +49,7 @@ namespace Terradue.OpenSearch.RdfEO {
                     case "PRISM":
                     case "SPOT":
                     case "AVNIR-2":
-                        return GetOptEarthObservationTypeFromRdf(rdf, series);
+                        return GetEarthObservationTypeFromRdf(rdf, series, "OPTICAL");
 
                     case "ASAR":
                     case "PALSAR2":
@@ -63,11 +59,11 @@ namespace Terradue.OpenSearch.RdfEO {
                     case "MIRAS":
                     case "AMI":
                     case "ASPS":
-                        return GetSarEarthObservationTypeFromRdf(rdf, series);
+                        return GetEarthObservationTypeFromRdf(rdf, series, "RADAR");
                     case "SIRAL":
                     case "RA2":
                     case "DORIS":
-                        return GetAltEarthObservationTypeFromRdf(rdf, series);
+                        return GetEarthObservationTypeFromRdf(rdf, series, "ALTIMETRIC");
                     
                     
                     case "MIPAS":
@@ -86,170 +82,88 @@ namespace Terradue.OpenSearch.RdfEO {
 
             if (identifier != null) {
                 if (identifier.Value.StartsWith("S1A")) {
-                    return GetSarEarthObservationTypeFromRdf(rdf, series); 
+                    return GetEarthObservationTypeFromRdf(rdf, series, "RADAR"); 
                 }
             }
 
-            return GetGenericEarthObservationTypeFromRdf(rdf, series);
+            return GetEarthObservationTypeFromRdf(rdf, series, "");
         }
 
-        public static EarthObservationType GetGenericEarthObservationTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.EarthObservationType GetEarthObservationTypeFromRdf(XElement rdf, XElement series, string type) {
 
-            EarthObservationType eo = new EarthObservationType();
+            Terradue.ServiceModel.Ogc.Eop21.EarthObservationType eo =new Terradue.ServiceModel.Ogc.Eop21.EarthObservationType();
+
+            if (type == "RADAR")
+                eo = new Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType();
+            if (type == "OPTICAL")
+                eo = new Terradue.ServiceModel.Ogc.Opt21.OptEarthObservationType();
+            if (type == "ALTIMETRIC")
+                eo = new Terradue.ServiceModel.Ogc.Alt21.AltEarthObservationType();
+            if (type == "ATMOSPHERIC")
+                eo = new Terradue.ServiceModel.Ogc.Atm21.AtmEarthObservationType();
+            if (type == "LIMB")
+                eo = new Terradue.ServiceModel.Ogc.Lmb21.LmbEarthObservationType();
+            if (type == "SSP")
+                eo = new Terradue.ServiceModel.Ogc.Ssp21.SspEarthObservationType();
+             
 
             // Equipment
-            eo.EopProcedure = GetEarthObservationEquipmentPropertyTypeFromRdf(rdf, series);
+            eo.procedure = new Terradue.ServiceModel.Ogc.Om.OM_ProcessPropertyType();
+            eo.procedure.Eop21EarthObservationEquipment = GetEop21EarthObservationEquipmentFromRdf(rdf, series, type);
 
             // Phenomenon
             eo.phenomenonTime = GetEOPhenomenonTypeFromRdf(rdf, series);
 
             // Metadata
-            eo.metaDataProperty1 = GetMetadataTypeFromRdf(rdf, series);
+            eo.EopMetaDataProperty = GetMetadataTypeFromRdf(rdf, series);
 
             // Result
-            eo.EopResult = GetEopResultTypeFromRdf(rdf, series);
+            eo.result = GetEopResultTypeFromRdf(rdf, series, type);
 
             // Footprint
-            eo.featureOfInterest = GetFeatureOfInterest(rdf, series);
+            eo.featureOfInterest = GetFeatureOfInterest(rdf, series, type);
 
             return eo;
         }
 
-        public static EarthObservationType GetAltEarthObservationTypeFromRdf(XElement rdf, XElement series) {
-
-            AltEarthObservationType altEO = new AltEarthObservationType();
-
-            // Equipment
-            altEO.EopProcedure = GetEarthObservationEquipmentPropertyTypeFromRdf(rdf, series);
-            altEO.EopProcedure.EarthObservationEquipment.sensor.Sensor.sensorType = "RADAR";
-
-            // Phenomenon
-            altEO.phenomenonTime = GetEOPhenomenonTypeFromRdf(rdf, series);
-
-            // Metadata
-            altEO.metaDataProperty1 = GetMetadataTypeFromRdf(rdf, series);
-
-            // Result
-            altEO.EopResult = GetEopResultTypeFromRdf(rdf, series);
-
-            // Footprint
-            altEO.featureOfInterest = GetFeatureOfInterest(rdf, series);
-
-            return altEO;
-        }
-
-        public static EarthObservationType GetOptEarthObservationTypeFromRdf(XElement rdf, XElement series) {
-
-            OptEarthObservationType optEO = new OptEarthObservationType();
-
-            // Equipment
-            optEO.EopProcedure = GetEarthObservationEquipmentPropertyTypeFromRdf(rdf, series);
-            optEO.EopProcedure.EarthObservationEquipment.sensor.Sensor.sensorType = "OPTICAL";
-
-            // Phenomenon
-            optEO.phenomenonTime = GetEOPhenomenonTypeFromRdf(rdf, series);
-
-            // Metadata
-            optEO.metaDataProperty1 = GetMetadataTypeFromRdf(rdf, series);
-
-            // Result
-            optEO.EopResult = GetEopResultTypeFromRdf(rdf, series);
-
-            // Footprint
-            optEO.featureOfInterest = GetFeatureOfInterest(rdf, series);
-
-            return optEO;
-        }
-
-        public static EarthObservationType GetSarEarthObservationTypeFromRdf(XElement rdf, XElement series) {
-
-            SarEarthObservationType sarEO = new SarEarthObservationType();
-
-            // Equipment
-            sarEO.SarEarthObservationEquipment = GetSarEarthObservationEquipmentPropertyTypeFromRdf(rdf, series);
-
-            // Phenomenon
-            sarEO.phenomenonTime = GetEOPhenomenonTypeFromRdf(rdf, series);
-
-            // Metadata
-            sarEO.metaDataProperty1 = GetMetadataTypeFromRdf(rdf, series);
-
-            // Result
-            sarEO.EopResult = GetEopResultTypeFromRdf(rdf, series);
-
-            // Footprint
-            sarEO.featureOfInterest = GetFeatureOfInterest(rdf, series);
-
-            return sarEO;
-        }
-
-        public static EarthObservationEquipmentPropertyType GetEarthObservationEquipmentPropertyTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.EarthObservationEquipmentType GetEop21EarthObservationEquipmentFromRdf(XElement rdf, XElement series, string type) {
 
             var platform = series.Element(XName.Get("platform", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var subject = series.Element(XName.Get("subject", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var sensor = series.Element(XName.Get("sensor", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
-            EarthObservationEquipmentPropertyType earthObservationEquipment = new EarthObservationEquipmentPropertyType();
-            earthObservationEquipment.EarthObservationEquipment = new EarthObservationEquipmentType();
+            Terradue.ServiceModel.Ogc.Eop21.EarthObservationEquipmentType equipment = new Terradue.ServiceModel.Ogc.Eop21.EarthObservationEquipmentType();
 
-            earthObservationEquipment.EarthObservationEquipment.platform = GetPlatformFromRdf(rdf, series);
+            equipment.platform = GetPlatformFromRdf(rdf, series);
 
-            earthObservationEquipment.EarthObservationEquipment.instrument = GetInstrumentFromRdf(rdf, series);
+            equipment.instrument = GetInstrumentFromRdf(rdf, series);
 
-            earthObservationEquipment.EarthObservationEquipment.sensor = GetSensorFromRdf(rdf, series);
+            equipment.sensor = GetSensorFromRdf(rdf, series);
 
-            earthObservationEquipment.EarthObservationEquipment.acquisitionParameters = new AcquisitionPropertyType();
-            earthObservationEquipment.EarthObservationEquipment.acquisitionParameters.Acquisition = new AcquisitionType();
+            equipment.acquisitionParameters = new Terradue.ServiceModel.Ogc.Eop21.AcquisitionPropertyType();
 
-            AcquisitionType acq = GetAcquisitionFromRdf(rdf, series);
+            equipment.acquisitionParameters.Acquisition = GetAcquisitionFromRdf(rdf, series, type);
 
-            return earthObservationEquipment;
-        }
-
-        public static SarEarthObservationEquipmentPropertyType GetSarEarthObservationEquipmentPropertyTypeFromRdf(XElement rdf, XElement series) {
-
-            var platform = series.Element(XName.Get("platform", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
-            var subject = series.Element(XName.Get("subject", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
-            var sensor = series.Element(XName.Get("sensor", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
-
-            SarEarthObservationEquipmentPropertyType sarEarthObservationEquipment = new SarEarthObservationEquipmentPropertyType();
-            sarEarthObservationEquipment.SarEarthObservationEquipment = new SarEarthObservationEquipmentType();
-
-            sarEarthObservationEquipment.SarEarthObservationEquipment.platform = GetPlatformFromRdf(rdf, series);
-
-            sarEarthObservationEquipment.SarEarthObservationEquipment.instrument = GetInstrumentFromRdf(rdf, series);
-
-            sarEarthObservationEquipment.SarEarthObservationEquipment.sensor = GetSensorFromRdf(rdf, series);
-
-            sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters = new SarAcquisitionPropertyType();
-            sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition = new SarAcquisitionType();
-
-            sarEarthObservationEquipment.SarEarthObservationEquipment.sensor.Sensor.sensorType = "RADAR";
-
-            AcquisitionType acq = GetAcquisitionFromRdf(rdf, series);
-
-            sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.orbitNumber = acq.orbitNumber;
-            sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.wrsLongitudeGrid = acq.wrsLongitudeGrid;
-            sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.orbitDirection = acq.orbitDirection;
+            equipment.sensor.Sensor.sensorType = type;
 
             var polc = rdf.Element(XName.Get("polarisationChannels", "http://earth.esa.int/sar"));
 
-            if (polc != null)
-                sarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.polarisationChannels = polc.Value;
+            if (polc != null && type == "RADAR")
+                equipment.acquisitionParameters.SarAcquisition.polarisationChannels = polc.Value;
 
-            return sarEarthObservationEquipment;
+            return equipment;
         }
 
 
-        public static PlatformPropertyType GetPlatformFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.PlatformPropertyType GetPlatformFromRdf(XElement rdf, XElement series) {
 
 
             var xplatform = series.Element(XName.Get("platform", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var subject = series.Element(XName.Get("subject", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
 
-            PlatformPropertyType platform = new PlatformPropertyType();
-            platform.Platform = new PlatformType();
+            Terradue.ServiceModel.Ogc.Eop21.PlatformPropertyType platform = new Terradue.ServiceModel.Ogc.Eop21.PlatformPropertyType();
+            platform.Platform = new Terradue.ServiceModel.Ogc.Eop21.PlatformType();
 
             var pf = "";
             if (xplatform != null)
@@ -325,7 +239,7 @@ namespace Terradue.OpenSearch.RdfEO {
         }
 
 
-        public static InstrumentPropertyType GetInstrumentFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.InstrumentPropertyType GetInstrumentFromRdf(XElement rdf, XElement series) {
 
 
             var sensor = series.Element(XName.Get("sensor", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
@@ -333,26 +247,26 @@ namespace Terradue.OpenSearch.RdfEO {
             if (sensor == null)
                 return null;
 
-            InstrumentPropertyType instrument = new InstrumentPropertyType();
-            instrument.Instrument = new InstrumentType();
+            Terradue.ServiceModel.Ogc.Eop21.InstrumentPropertyType instrument = new Terradue.ServiceModel.Ogc.Eop21.InstrumentPropertyType();
+            instrument.Instrument = new Terradue.ServiceModel.Ogc.Eop21.InstrumentType();
             instrument.Instrument.shortName = sensor.Value;
 
             return instrument;
 
         }
 
-        public static SensorPropertyType GetSensorFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.SensorPropertyType GetSensorFromRdf(XElement rdf, XElement series) {
 
             var sensorx = series.Element(XName.Get("platform", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var seriesid = series.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"));
             var swathid = rdf.Element(XName.Get("swathIdentifier", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
-            SensorPropertyType sensor = new SensorPropertyType();
-            sensor.Sensor = new SensorType();
+            Terradue.ServiceModel.Ogc.Eop21.SensorPropertyType sensor = new Terradue.ServiceModel.Ogc.Eop21.SensorPropertyType();
+            sensor.Sensor = new Terradue.ServiceModel.Ogc.Eop21.SensorType();
 
             if (swathid != null) {
-                sensor.Sensor.swathIdentifier = new Terradue.GeoJson.Gml.CodeListType();
-                sensor.Sensor.swathIdentifier.Text = new string[]{ swathid.Value };
+                sensor.Sensor.swathIdentifier = new Terradue.ServiceModel.Ogc.Gml321.CodeListType();
+                sensor.Sensor.swathIdentifier.Text = swathid.Value;
             }
 
             if (seriesid != null) {
@@ -369,8 +283,8 @@ namespace Terradue.OpenSearch.RdfEO {
                     case "ER02_SAR_IMS_1P":
                     case "ER02_SAR_IM__0P":
                     case "ER01_SAR_IM__0P": 
-                        sensor.Sensor.operationalMode = new Terradue.GeoJson.Gml.CodeListType();
-                        sensor.Sensor.operationalMode.Text = new string[]{ "IM" };
+                        sensor.Sensor.operationalMode = new Terradue.ServiceModel.Ogc.Gml321.CodeListType();
+                        sensor.Sensor.operationalMode.Text = "IM";
                         break;
                     case "ASA_APC_0P":
                     case "ASA_APG_1P":
@@ -388,8 +302,8 @@ namespace Terradue.OpenSearch.RdfEO {
                     case "ASA_WS__0C":
                     case "ASA_WS__0P":
                     case "ASA_WVI_1P":
-                        sensor.Sensor.operationalMode = new Terradue.GeoJson.Gml.CodeListType();
-                        sensor.Sensor.operationalMode.Text = new string[]{ seriesid.Value.Substring(4, 2) };
+                        sensor.Sensor.operationalMode = new Terradue.ServiceModel.Ogc.Gml321.CodeListType();
+                        sensor.Sensor.operationalMode.Text = seriesid.Value.Substring(4, 2);
                         break;
                   
 
@@ -401,75 +315,80 @@ namespace Terradue.OpenSearch.RdfEO {
             
         }
 
-        public static AcquisitionType GetAcquisitionFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.AcquisitionType GetAcquisitionFromRdf(XElement rdf, XElement series, string type) {
             
             var orbitn = rdf.Element(XName.Get("orbitNumber", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var orbitd = rdf.Element(XName.Get("orbitDirection", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var track = rdf.Element(XName.Get("trackNumber", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var wrslog = rdf.Element(XName.Get("wrsLongitudeGrid", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
-            AcquisitionType acq = new AcquisitionType();
+            Terradue.ServiceModel.Ogc.Eop21.AcquisitionType acq = null;
+
+            if (type == "RADAR")
+                acq = new Terradue.ServiceModel.Ogc.Sar21.SarAcquisitionType();
+            else
+                acq = new Terradue.ServiceModel.Ogc.Eop21.AcquisitionType();
 
             if (orbitn != null)
                 acq.orbitNumber = orbitn.Value;
 
             if (track != null) {
-                acq.wrsLongitudeGrid = new Terradue.GeoJson.Gml.CodeWithAuthorityType();
+                acq.wrsLongitudeGrid = new Terradue.ServiceModel.Ogc.Gml321.CodeWithAuthorityType();
                 acq.wrsLongitudeGrid.Value = track.Value;
             }
 
             if (wrslog != null) {
-                acq.wrsLongitudeGrid = new Terradue.GeoJson.Gml.CodeWithAuthorityType();
+                acq.wrsLongitudeGrid = new Terradue.ServiceModel.Ogc.Gml321.CodeWithAuthorityType();
                 acq.wrsLongitudeGrid.Value = wrslog.Value;
             }
 
             if (orbitd != null)
-                acq.orbitDirection = (OrbitDirectionValueType)Enum.Parse(typeof(OrbitDirectionValueType), orbitd.Value.ToUpper());
+                acq.orbitDirection = (Terradue.ServiceModel.Ogc.Eop21.OrbitDirectionValueType)Enum.Parse(typeof(Terradue.ServiceModel.Ogc.Eop21.OrbitDirectionValueType), orbitd.Value.ToUpper());
 
             return acq;
 
         }
 
-        public static TimeObjectPropertyType GetEOPhenomenonTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Om.TimeObjectPropertyType GetEOPhenomenonTypeFromRdf(XElement rdf, XElement series) {
 
             var start = rdf.Element(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"));
             var end = rdf.Element(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"));
 
 
-            TimeObjectPropertyType phenomenon = new Terradue.Metadata.EarthObservation.Ogc.Om.TimeObjectPropertyType();
-            phenomenon.GmlTimePeriod = new Terradue.GeoJson.Gml.TimePeriodType();
-            phenomenon.GmlTimePeriod.beginPosition = new Terradue.GeoJson.Gml.TimePositionType();
+            Terradue.ServiceModel.Ogc.Om.TimeObjectPropertyType phenomenon = new Terradue.ServiceModel.Ogc.Om.TimeObjectPropertyType();
+            phenomenon.GmlTimePeriod = new Terradue.ServiceModel.Ogc.Gml321.TimePeriodType();
+            phenomenon.GmlTimePeriod.beginPosition = new Terradue.ServiceModel.Ogc.Gml321.TimePositionType();
             phenomenon.GmlTimePeriod.beginPosition.Value = start.Value;
-            phenomenon.GmlTimePeriod.endPosition = new Terradue.GeoJson.Gml.TimePositionType();
+            phenomenon.GmlTimePeriod.endPosition = new Terradue.ServiceModel.Ogc.Gml321.TimePositionType();
             phenomenon.GmlTimePeriod.endPosition.Value = end.Value;
 
             return phenomenon;
         }
 
-        public static EarthObservationMetaDataPropertyType GetMetadataTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Eop21.EarthObservationMetaDataPropertyType GetMetadataTypeFromRdf(XElement rdf, XElement series) {
 
-            EarthObservationMetaDataPropertyType metadata = new EarthObservationMetaDataPropertyType();
+            Terradue.ServiceModel.Ogc.Eop21.EarthObservationMetaDataPropertyType metadata = new Terradue.ServiceModel.Ogc.Eop21.EarthObservationMetaDataPropertyType();
 
             var seriesid = series.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
             var identifier = rdf.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
 
-            metadata.EarthObservationMetaData = new EarthObservationMetaDataType();
-            metadata.EarthObservationMetaData.acquisitionType = AcquisitionTypeValueType.NOMINAL;
+            metadata.EarthObservationMetaData = new Terradue.ServiceModel.Ogc.Eop21.EarthObservationMetaDataType();
+            metadata.EarthObservationMetaData.acquisitionType = Terradue.ServiceModel.Ogc.Eop21.AcquisitionTypeValueType.NOMINAL;
             metadata.EarthObservationMetaData.parentIdentifier = seriesid;
-            metadata.EarthObservationMetaData.identifier = identifier.Replace(".N1", "");
+            metadata.EarthObservationMetaData.identifier = identifier;
             metadata.EarthObservationMetaData.productType = GetProductType(seriesid);
 
             var pcenter = rdf.Element(XName.Get("processingCenter", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
             var pversion = rdf.Element(XName.Get("processorVersion", "http://www.genesi-dr.eu/spec/opensearch/extensions/eop/1.0/"));
 
-            List<ProcessingInformationPropertyType> processings = new List<ProcessingInformationPropertyType>();
+            List<Terradue.ServiceModel.Ogc.Eop21.ProcessingInformationPropertyType> processings = new List<Terradue.ServiceModel.Ogc.Eop21.ProcessingInformationPropertyType>();
 
-            ProcessingInformationPropertyType processing = new ProcessingInformationPropertyType();
-            processing.ProcessingInformation = new ProcessingInformationType();
+            Terradue.ServiceModel.Ogc.Eop21.ProcessingInformationPropertyType processing = new Terradue.ServiceModel.Ogc.Eop21.ProcessingInformationPropertyType();
+            processing.ProcessingInformation = new Terradue.ServiceModel.Ogc.Eop21.ProcessingInformationType();
 
             if (pcenter != null) {
-                processing.ProcessingInformation.processingCenter = new Terradue.GeoJson.Gml.CodeListType();
-                processing.ProcessingInformation.processingCenter.Text = new string[]{ pcenter.Value };
+                processing.ProcessingInformation.processingCenter = new Terradue.ServiceModel.Ogc.Gml321.CodeListType();
+                processing.ProcessingInformation.processingCenter.Text = pcenter.Value;
             }
 
             if (pversion != null) {
@@ -514,27 +433,35 @@ namespace Terradue.OpenSearch.RdfEO {
             return metadata;
         }
 
-        public static EarthObservationResultPropertyType GetEopResultTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Om.OM_ResultPropertyType GetEopResultTypeFromRdf(XElement rdf, XElement series, string type) {
 
 
-            EarthObservationResultPropertyType result = new EarthObservationResultPropertyType();
+            Terradue.ServiceModel.Ogc.Om.OM_ResultPropertyType result = new Terradue.ServiceModel.Ogc.Om.OM_ResultPropertyType();
 
-            result.EarthObservationResult = new EarthObservationResultType();
+            if (type == "OPTICAL")
+                result.Opt21EarthObservationResult = new Terradue.ServiceModel.Ogc.Opt21.OptEarthObservationResultType();
+            else if (type == "ATMOSPHERIC")
+                result.Atm21EarthObservationResult = new Terradue.ServiceModel.Ogc.Atm21.AtmEarthObservationResultType();
+            else
+                result.Eop21EarthObservationResult = new Terradue.ServiceModel.Ogc.Eop21.EarthObservationResultType();
 
 
             return result;
         }
 
-        public static Terradue.GeoJson.Gml.FeaturePropertyType GetFeatureOfInterest(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Gml321.FeaturePropertyType GetFeatureOfInterest(XElement rdf, XElement series, string type) {
 
             var spatial = rdf.Element(XName.Get("spatial", "http://purl.org/dc/terms/"));
 
-            var geom = GeometryFactory.WktToGeometry(spatial.Value);
+            var geom = WktExtensions.WktToGeometry(spatial.Value);
 
-            FootprintPropertyType feature = new FootprintPropertyType();
-            feature.Footprint = new FootprintType();
-            feature.Footprint.multiExtentOf = new Terradue.GeoJson.Gml.MultiSurfacePropertyType();
-            feature.Footprint.multiExtentOf.MultiSurface = geom.ToMultiSurface();
+            Terradue.ServiceModel.Ogc.Gml321.FeaturePropertyType feature = new Terradue.ServiceModel.Ogc.Gml321.FeaturePropertyType();
+            if (type == "ALTIMETRIC")
+                feature.Eop21Footprint = new Terradue.ServiceModel.Ogc.Alt21.AltFootprintType();
+            else
+                feature.Eop21Footprint = new Terradue.ServiceModel.Ogc.Eop21.FootprintType();
+            feature.Eop21Footprint.multiExtentOf = new Terradue.ServiceModel.Ogc.Gml321.MultiSurfacePropertyType();
+            feature.Eop21Footprint.multiExtentOf.MultiSurface = Terradue.GeoJson.Gml321.Gml321Extensions.ToGmlMultiSurface(geom);
 
 
             return feature;
