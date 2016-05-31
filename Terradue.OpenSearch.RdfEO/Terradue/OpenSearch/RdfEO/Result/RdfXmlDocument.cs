@@ -207,9 +207,9 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             set ;
         }
 
-        DateTime date;
+        DateTimeOffset date;
 
-        public DateTime LastUpdatedTime {
+        public DateTimeOffset LastUpdatedTime {
             get {
                 return date;
             }
