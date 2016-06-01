@@ -18,6 +18,8 @@ using System.Runtime.Serialization;
 using System.IO;
 using Terradue.GeoJson.Geometry;
 using Terradue.OpenSearch.Result;
+using Terradue.ServiceModel.Ogc;
+using Terradue.GeoJson.Gml321;
 
 namespace Terradue.OpenSearch.RdfEO.Result {
 
@@ -48,20 +50,20 @@ namespace Terradue.OpenSearch.RdfEO.Result {
                 Identifier = root.Element(XName.Get("identifier", "http://purl.org/dc/elements/1.1/")).Value;
             //
             elementExtensions = RdfXmlDocument.XElementsToElementExtensions(root.Elements());
-            if (root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ALT)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ALT20)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ATM)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.ATM20)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.EOP)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.EOP20)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.LMB)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.LMB20)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.OPT)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.OPT20)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.SAR)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.SAR20)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.SSP)) == null
-                && root.Element(XName.Get("EarthObservation", Terradue.Metadata.EarthObservation.MetadataHelpers.SSP20)) == null) {
+            if (root.Element(XName.Get("EarthObservation", OgcHelpers.ALT21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.ALT20)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.ATM21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.ATM20)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.EOP21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.EOP20)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.LMB21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.LMB20)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.OPT21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.OPT20)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.SAR21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.SAR20)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.SSP21)) == null
+                && root.Element(XName.Get("EarthObservation", OgcHelpers.SSP20)) == null) {
                 ElementExtensions.Add(BuildEarthObservationReader(root, series));
             }
             links = new Collection<SyndicationLink>();
@@ -101,20 +103,9 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             if (exts.Descendants(XName.Get("endPosition", "http://www.opengis.net/gml/3.2")).Count() > 0) {
                 root.Add(new XElement(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"), exts.Descendants(XName.Get("endPosition", "http://www.opengis.net/gml/3.2")).First().Value));
             }
-            if (exts.Descendants(XName.Get("multiExtentOf", "http://www.opengis.net/eop/2.0")).Count() > 0 && exts.Descendants(XName.Get("multiExtentOf", "http://www.opengis.net/eop/2.0")).Elements().Count() > 0) {
-                XElement gml = exts.Descendants(XName.Get("multiExtentOf", "http://www.opengis.net/eop/2.0")).Elements().First();
-                XmlDocument doc = new XmlDocument();
-                XmlElement element = doc.ReadNode(gml.CreateReader()) as XmlElement;
-                var feature = GeometryFactory.GmlToFeature(element);
-                root.Add(new XElement(XName.Get("spatial", "http://purl.org/dc/terms/"), feature.ToWkt()));
-            }
-            if (exts.Descendants(XName.Get("multiExtentOf", "http://www.opengis.net/eop/2.1")).Count() > 0 && exts.Descendants(XName.Get("multiExtentOf", "http://www.opengis.net/eop/2.1")).Elements().Count() > 0) {
-                XElement gml = exts.Descendants(XName.Get("multiExtentOf", "http://www.opengis.net/eop/2.1")).Elements().First();
-                XmlDocument doc = new XmlDocument();
-                XmlElement element = doc.ReadNode(gml.CreateReader()) as XmlElement;
-                var feature = GeometryFactory.GmlToFeature(element);
-                root.Add(new XElement(XName.Get("spatial", "http://purl.org/dc/terms/"), feature.ToWkt()));
-            }
+            var geom = Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindGeometry(this);
+            if ( geom != null )
+                root.Add(new XElement(XName.Get("spatial", "http://purl.org/dc/terms/"), geom.ToWkt()));
             root.SetAttributeValue(XName.Get("ical", XNamespace.Xmlns.NamespaceName), "http://www.w3.org/2002/12/cal/ical#");
             root.SetAttributeValue(XName.Get("dct", XNamespace.Xmlns.NamespaceName), "http://purl.org/dc/terms/");
             root.Add(GetOnlineResources());
@@ -174,12 +165,12 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             set ;
         }
 
-        public DateTime LastUpdatedTime {
+        public DateTimeOffset LastUpdatedTime {
             get ;
             set ;
         }
 
-        public DateTime PublishDate {
+        public DateTimeOffset PublishDate {
             get ;
             set ;
         }

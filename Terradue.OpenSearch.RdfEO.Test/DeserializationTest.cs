@@ -5,27 +5,29 @@ using Terradue.OpenSearch.Result;
 using System.Xml;
 using System.Linq;
 using Terradue.OpenSearch.RdfEO.Result;
-using Terradue.Metadata.EarthObservation.Ogc.Sar;
 using Terradue.Metadata.EarthObservation;
+using Terradue.ServiceModel.Ogc;
 
 namespace Terradue.OpenSearch.RdfEO.Test {
     [TestFixture()]
     public class DeserializationTest {
 
-        [Test()]
-        public void Cci() {
-
-            FileStream cci = new FileStream("../samples/cci.rdf", FileMode.Open);
-
-            RdfXmlDocument rdfDoc;
-
-            XmlReader reader = XmlReader.Create(cci);
-
-            rdfDoc = RdfXmlDocument.Load(reader);
-
-            Assert.AreEqual("SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.slc", rdfDoc.Items.First().Identifier);
-
-        }
+//        [Test()]
+//        public void Cci() {
+//
+//            FileStream cci = new FileStream("../samples/cci.rdf", FileMode.Open);
+//
+//            RdfXmlDocument rdfDoc;
+//
+//            XmlReader reader = XmlReader.Create(cci);
+//
+//            rdfDoc = RdfXmlDocument.Load(reader);
+//
+//            Assert.AreEqual("SAR_SLC_19960228_145405_19960228_145452_125_DESCENDING.slc", rdfDoc.Items.First().Identifier);
+//
+//            cci.Close();
+//
+//        }
 
         [Test()]
         public void TestAsar() {
@@ -38,11 +40,11 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+            Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType>("EarthObservation", OgcHelpers.SAR21, OgcHelpers.Sar21Serializer)[0];
 
-            Assert.AreEqual("IS6", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.sensor.Sensor.swathIdentifier.Text[0]);
+            Assert.AreEqual("IS6", saEO.procedure.Eop21EarthObservationEquipment.sensor.Sensor.swathIdentifier.Text);
 
-            Assert.AreEqual("IMS", saEO.metaDataProperty1.EarthObservationMetaData.productType);
+            Assert.AreEqual("IMS", saEO.EopMetaDataProperty.EarthObservationMetaData.productType);
 
 
         }
@@ -58,9 +60,9 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+            Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType>("EarthObservation", OgcHelpers.SAR21, OgcHelpers.Sar21Serializer)[0];
 
-            Assert.AreEqual("139", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
+            Assert.AreEqual("139", saEO.procedure.Eop21EarthObservationEquipment.acquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
 
             Assert.AreEqual(50962910768, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
 
@@ -77,9 +79,9 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+            Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType>("EarthObservation", OgcHelpers.SAR21, OgcHelpers.Sar21Serializer)[0];
 
-            Assert.AreEqual("257", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
+            Assert.AreEqual("257", saEO.procedure.Eop21EarthObservationEquipment.acquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
 
             Assert.AreEqual(193003137, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
 
@@ -102,9 +104,9 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+            Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType>("EarthObservation", OgcHelpers.SAR21, OgcHelpers.Sar21Serializer)[0];
 
-            Assert.AreEqual("336", saEO.SarEarthObservationEquipment.SarEarthObservationEquipment.SarAcquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
+            Assert.AreEqual("336", saEO.procedure.Eop21EarthObservationEquipment.acquisitionParameters.SarAcquisition.wrsLongitudeGrid.Value);
 
             Assert.AreEqual(0, rdfDoc.Datasets[0].Links.First(l => l.RelationshipType == "enclosure").Length);
 
@@ -128,7 +130,7 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            Terradue.Metadata.EarthObservation.Ogc.Eop20.EarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.Metadata.EarthObservation.Ogc.Eop20.EarthObservationType>("EarthObservation", MetadataHelpers.EOP20, MetadataHelpers.EopSerializer20)[0];
+            Terradue.ServiceModel.Ogc.Eop20.EarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Eop20.EarthObservationType>("EarthObservation", OgcHelpers.EOP20, OgcHelpers.Eop20Serializer)[0];
 
             rdfDoc.SerializeToString();
 
@@ -147,7 +149,7 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+            Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType>("EarthObservation", OgcHelpers.SAR21, OgcHelpers.Sar21Serializer)[0];
 
 
             rdfDoc.SerializeToString();
@@ -167,7 +169,7 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
             rdfDoc = RdfXmlDocument.Load(reader);
 
-            Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.Metadata.EarthObservation.Ogc.Sar.SarEarthObservationType>("EarthObservation", MetadataHelpers.SAR, MetadataHelpers.SarSerializer)[0];
+            Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Sar21.SarEarthObservationType>("EarthObservation", OgcHelpers.SAR21, OgcHelpers.Sar21Serializer)[0];
 
 
             rdfDoc.SerializeToString();
