@@ -5,6 +5,26 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 using NuGet4Mono.Extensions;
 
+/*!
+
+\namespace Terradue.OpenSearch.kml
+@{
+    Terradue.OpenSearch.RdfEO is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for Rdf EO format
+
+    \xrefitem sw_version "Versions" "Software Package Version" 1.3.8
+
+    \xrefitem sw_link "Link" "Software Package Link" [DotNetOpenSearchRdfEO](https://github.com/Terradue/DotNetOpenSearchRdfEO)
+
+    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/DotNetOpenSearch/Terradue.OpenSearch.RdfEO/blob/master/LICENSE.txt)
+
+    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
+
+    \ingroup OpenSearch
+@}
+
+*/
+
+
 [assembly: AssemblyTitle("Terradue.OpenSearch.RdfEO")]
 [assembly: AssemblyDescription("Terradue.OpenSearch.RdfEO is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for Rdf EO format")]
 [assembly: AssemblyConfiguration("")]
