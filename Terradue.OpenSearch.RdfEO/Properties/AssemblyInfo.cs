@@ -7,7 +7,7 @@ using NuGet4Mono.Extensions;
 
 /*!
 
-\namespace Terradue.OpenSearch.kml
+\namespace Terradue.OpenSearch.RdfEO
 @{
     Terradue.OpenSearch.RdfEO is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for Rdf EO format
 
@@ -15,7 +15,7 @@ using NuGet4Mono.Extensions;
 
     \xrefitem sw_link "Link" "Software Package Link" [DotNetOpenSearchRdfEO](https://github.com/Terradue/DotNetOpenSearchRdfEO)
 
-    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/DotNetOpenSearch/Terradue.OpenSearch.RdfEO/blob/master/LICENSE.txt)
+    \xrefitem sw_license "License" "Software License" [AGPL](https://github.com/DotNetOpenSearch/Terradue.OpenSearch.RdfEO/blob/master/LICENSE)
 
     \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
 
