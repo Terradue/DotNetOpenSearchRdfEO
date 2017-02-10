@@ -176,7 +176,28 @@ namespace Terradue.OpenSearch.RdfEO.Test {
 
 
 
-        }   
+        }  
+
+        [Test()]
+        public void FromDORPOR()
+        {
+
+            FileStream cci = new FileStream("../samples/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326.rdf", FileMode.Open);
+
+            RdfXmlDocument rdfDoc;
+
+            XmlReader reader = XmlReader.Create(cci);
+
+            rdfDoc = RdfXmlDocument.Load(reader);
+
+            Terradue.ServiceModel.Ogc.Eop21.EarthObservationType saEO = rdfDoc.Datasets[0].ElementExtensions.ReadElementExtensions<Terradue.ServiceModel.Ogc.Eop21.EarthObservationType>("EarthObservation", OgcHelpers.EOP21, OgcHelpers.Eop21Serializer)[0];
+
+
+            rdfDoc.SerializeToString();
+
+
+
+        }
     }
 }
 

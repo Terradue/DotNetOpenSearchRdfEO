@@ -1,7 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
 using Terradue.OpenSearch.Engine;
-using Mono.Addins;
 using Terradue.OpenSearch.Result;
 
 namespace Terradue.OpenSearch.RdfEO.Test {
@@ -12,8 +11,6 @@ namespace Terradue.OpenSearch.RdfEO.Test {
         [Test()]
         public void GenericOpenSearchableTest() {
 
-            AddinManager.Initialize();
-            AddinManager.Registry.Update(null);
 
             OpenSearchEngine ose = new OpenSearchEngine();
 
