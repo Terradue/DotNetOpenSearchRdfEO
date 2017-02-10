@@ -8,7 +8,6 @@
 
 using System;
 using System.Linq;
-using Mono.Addins;
 using System.Collections.Generic;
 using System.Net;
 using System.Web;
@@ -24,8 +23,6 @@ using System.IO;
 using Terradue.OpenSearch.Engine;
 using Terradue.OpenSearch.RdfEO.Result;
 
-[assembly:Addin]
-[assembly:AddinDependency("OpenSearchEngine", "1.0")]
 namespace Terradue.OpenSearch.RdfEO.Extensions {
     /// <summary>
     /// Rdf open search engine extension.
@@ -33,8 +30,7 @@ namespace Terradue.OpenSearch.RdfEO.Extensions {
     /// <description>
     /// Extension that allows to query and transform Rdf OpenSearchable source to Rdf XML document (Atom).
     /// </description>
-    [Extension(typeof(IOpenSearchEngineExtension))]
-    [ExtensionNode("RDF", "RDF native query")]
+    [OpenSearchEngineExtension("RDF", "RDF native query")]
     public class RdfOpenSearchEngineExtension : OpenSearchEngineExtension<RdfXmlDocument> {
         /// <summary>
         /// Initializes a new instance of the

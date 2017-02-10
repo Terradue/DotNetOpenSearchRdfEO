@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:dclite4g="http://xmlns.com/2008/dclite4g#" xmlns:ical="http://www.w3.org/2002/12/cal/ical#" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#"
+	xmlns:eop="http://earth.esa.int/eop" xmlns:opt="http://earth.esa.int/opt" xmlns:sar="http://earth.esa.int/sar" xmlns:atm="http://earth.esa.int/atm" xmlns:sru="http://a9.com/-/opensearch/extensions/sru/2.0/">
+	<rdf:Description rdf:about="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326/rdf">
+		<os:totalResults>1</os:totalResults>
+		<os:startIndex>0</os:startIndex>
+		<os:itemsPerPage>20</os:itemsPerPage>
+		<dc:creator>Terradue CAS version 1.6.0.0</dc:creator>
+		<dc:date>2017-02-10T09:53:27Z</dc:date>
+		<dc:SizeOrDuration>0.020 sec</dc:SizeOrDuration>
+		<atom:link atom:rel="self" atom:type="application/rdf+xml" atom:href="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326/rdf?startIndex=0" />
+		<atom:link atom:rel="first" atom:type="application/rdf+xml" atom:href="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326/rdf?startIndex=0" />
+		<atom:link atom:rel="last" atom:type="application/rdf+xml" atom:href="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326/rdf?startIndex=0" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:href="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326/description" />
+		<os:Query os:role="request" />
+	</rdf:Description>
+	<dclite4g:Series rdf:about="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/rdf">
+		<dc:identifier>DOR_POR_AX</dc:identifier>
+		<dc:description rdf:resource="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/description/" />
+		<atom:link atom:rel="search" atom:type="application/opensearchdescription+xml" atom:title="Search the DOR_POR_AX Series" atom:href="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/description/" />
+		<dc:title>ENVISAT DORIS Preliminary Orbit (DOR_POR_AX)</dc:title>
+		<eop:sensor>DORIS</eop:sensor>
+		<ical:dtstart>2002-03-22T21:55:27.000Z</ical:dtstart>
+		<ical:dtend>2011-05-14T00:23:25.000Z</ical:dtend>
+		<dct:spatial>POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))</dct:spatial>
+		<dc:subject>ENVISAT</dc:subject>
+		<dct:created>2010-05-17T15:50:41.125Z</dct:created>
+		<dct:modified>2014-04-30T08:30:44.356Z</dct:modified>
+	</dclite4g:Series>
+	<dclite4g:DataSet rdf:about="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326/rdf">
+		<dc:identifier>DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326</dc:identifier>
+		<dclite4g:series rdf:resource="http://catalogue.terradue.int/catalogue/search/DOR_POR_AX/rdf" />
+		<dclite4g:onlineResource>
+			<ws:S3 rdf:about="s3://dor-por-ax/2011/05/DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326.gz" ws:preference="50" />
+		</dclite4g:onlineResource>
+		<eop:processorVersion>orbito/4.0</eop:processorVersion>
+		<eop:acquisitionStation>ORBITEMISS</eop:acquisitionStation>
+		<eop:processingCenter>O_M</eop:processingCenter>
+		<eop:size>206606</eop:size>
+		<eop:orbitNumber>0</eop:orbitNumber>
+		<ical:dtstart>2011-05-11T21:55:26.000Z</ical:dtstart>
+		<ical:dtend>2011-05-13T00:23:25.000Z</ical:dtend>
+		<eop:processingDate>2011-05-14T02:13:59.000Z</eop:processingDate>
+		<dc:title>ENVISAT DORIS Preliminary Orbit (DOR_POR_AX) :: DOR_POR_AXVF-P20110514_021400_20110511_215526_20110513_002326 ::   :: 11 May       2011</dc:title>
+		<dct:created>2011-05-15T05:08:30.000Z</dct:created>
+		<dct:dateSubmitted>2014-03-20T10:16:24.295Z</dct:dateSubmitted>
+		<dct:modified>2014-04-30T08:30:44.356Z</dct:modified>
+		<dc:coverage>
+		</dc:coverage>
+	</dclite4g:DataSet>
+</rdf:RDF>

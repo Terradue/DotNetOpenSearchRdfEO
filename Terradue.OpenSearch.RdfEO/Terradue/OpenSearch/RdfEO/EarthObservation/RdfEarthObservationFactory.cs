@@ -453,6 +453,8 @@ namespace Terradue.OpenSearch.RdfEO {
 
             var spatial = rdf.Element(XName.Get("spatial", "http://purl.org/dc/terms/"));
 
+            if (spatial == null) return null;
+
             var geom = WktExtensions.WktToGeometry(spatial.Value);
 
             Terradue.ServiceModel.Ogc.Gml321.FeaturePropertyType feature = new Terradue.ServiceModel.Ogc.Gml321.FeaturePropertyType();
