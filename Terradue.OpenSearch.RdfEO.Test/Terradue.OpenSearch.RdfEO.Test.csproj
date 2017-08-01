@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="DeserializationTest.cs" />
     <Compile Include="GenericTest.cs" />
+    <Compile Include="TransformationTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -134,6 +135,7 @@
     <None Include="Resources\ne_110m_land\ne_110m_land.shp" />
     <None Include="Resources\ne_110m_land\ne_110m_land.prj" />
     <None Include="Resources\ne_110m_land\ne_110m_land.dbf" />
+    <None Include="samples\empty.atom" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="samples\" />
