@@ -108,7 +108,7 @@ namespace Terradue.OpenSearch.RdfEO {
              
 
             // Equipment
-            eo.procedure = new Terradue.ServiceModel.Ogc.Om.OM_ProcessPropertyType();
+            eo.procedure = new Terradue.ServiceModel.Ogc.Om20.OM_ProcessPropertyType();
             eo.procedure.Eop21EarthObservationEquipment = GetEop21EarthObservationEquipmentFromRdf(rdf, series, type);
 
             // Phenomenon
@@ -349,13 +349,13 @@ namespace Terradue.OpenSearch.RdfEO {
 
         }
 
-        public static Terradue.ServiceModel.Ogc.Om.TimeObjectPropertyType GetEOPhenomenonTypeFromRdf(XElement rdf, XElement series) {
+        public static Terradue.ServiceModel.Ogc.Om20.TimeObjectPropertyType GetEOPhenomenonTypeFromRdf(XElement rdf, XElement series) {
 
             var start = rdf.Element(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"));
             var end = rdf.Element(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"));
 
 
-            Terradue.ServiceModel.Ogc.Om.TimeObjectPropertyType phenomenon = new Terradue.ServiceModel.Ogc.Om.TimeObjectPropertyType();
+            Terradue.ServiceModel.Ogc.Om20.TimeObjectPropertyType phenomenon = new Terradue.ServiceModel.Ogc.Om20.TimeObjectPropertyType();
             phenomenon.GmlTimePeriod = new Terradue.ServiceModel.Ogc.Gml321.TimePeriodType();
             phenomenon.GmlTimePeriod.beginPosition = new Terradue.ServiceModel.Ogc.Gml321.TimePositionType();
             phenomenon.GmlTimePeriod.beginPosition.Value = start.Value;
@@ -433,10 +433,10 @@ namespace Terradue.OpenSearch.RdfEO {
             return metadata;
         }
 
-        public static Terradue.ServiceModel.Ogc.Om.OM_ResultPropertyType GetEopResultTypeFromRdf(XElement rdf, XElement series, string type) {
+        public static Terradue.ServiceModel.Ogc.Om20.OM_ResultPropertyType GetEopResultTypeFromRdf(XElement rdf, XElement series, string type) {
 
 
-            Terradue.ServiceModel.Ogc.Om.OM_ResultPropertyType result = new Terradue.ServiceModel.Ogc.Om.OM_ResultPropertyType();
+            Terradue.ServiceModel.Ogc.Om20.OM_ResultPropertyType result = new Terradue.ServiceModel.Ogc.Om20.OM_ResultPropertyType();
 
             if (type == "OPTICAL")
                 result.Opt21EarthObservationResult = new Terradue.ServiceModel.Ogc.Opt21.OptEarthObservationResultType();

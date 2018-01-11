@@ -88,8 +88,8 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             root.Add(new XElement(XName.Get("modified", "http://purl.org/dc/terms/"), LastUpdatedTime.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("created", "http://purl.org/dc/terms/"), PublishDate.ToString("yyyy-MM-ddThh:mm:ss.fffZ")));
             root.Add(new XElement(XName.Get("identifier", "http://purl.org/dc/elements/1.1/"), Identifier));
-            root.Add(new XElement(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindStartDateFromOpenSearchResultItem(this)));
-            root.Add(new XElement(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindEndDateFromOpenSearchResultItem(this)));
+            root.Add(new XElement(XName.Get("dtstart", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.Extensions.EarthObservationOpenSearchResultExtensions.FindStartDate(this)));
+            root.Add(new XElement(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"), Terradue.Metadata.EarthObservation.OpenSearch.Extensions.EarthObservationOpenSearchResultExtensions.FindEndDate(this)));
 
             XElement exts = XElement.Load(ElementExtensions.GetReaderAtExtensionWrapper());
             foreach (var ext in exts.Elements()) {
@@ -103,7 +103,7 @@ namespace Terradue.OpenSearch.RdfEO.Result {
             if (exts.Descendants(XName.Get("endPosition", "http://www.opengis.net/gml/3.2")).Count() > 0) {
                 root.Add(new XElement(XName.Get("dtend", "http://www.w3.org/2002/12/cal/ical#"), exts.Descendants(XName.Get("endPosition", "http://www.opengis.net/gml/3.2")).First().Value));
             }
-            var geom = Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindGeometry(this);
+            var geom = Terradue.Metadata.EarthObservation.OpenSearch.Extensions.EarthObservationOpenSearchResultExtensions.FindGeometry(this);
             if ( geom != null )
                 root.Add(new XElement(XName.Get("spatial", "http://purl.org/dc/terms/"), geom.ToWkt()));
             root.SetAttributeValue(XName.Get("ical", XNamespace.Xmlns.NamespaceName), "http://www.w3.org/2002/12/cal/ical#");
