@@ -11,7 +11,7 @@ using NuGet4Mono.Extensions;
 @{
     Terradue.OpenSearch.RdfEO is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for Rdf EO format
 
-    \xrefitem sw_version "Versions" "Software Package Version" 1.3.9
+    \xrefitem sw_version "Versions" "Software Package Version" 1.4.2
 
     \xrefitem sw_link "Link" "Software Package Link" [DotNetOpenSearchRdfEO](https://github.com/Terradue/DotNetOpenSearchRdfEO)
 
@@ -36,8 +36,8 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyAuthors("Emmanuel Mathot")]
 [assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchRdfEO")]
 [assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchRdfEO/blob/master/LICENSE")]
-[assembly: AssemblyVersion("1.4.0.*")]
-[assembly: AssemblyInformationalVersion("1.4.0")]
+[assembly: AssemblyVersion("1.4.2.*")]
+[assembly: AssemblyInformationalVersion("1.4.2")]
 
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
