@@ -22,6 +22,7 @@ using System.Xml.Linq;
 using System.IO;
 using Terradue.OpenSearch.Engine;
 using Terradue.OpenSearch.RdfEO.Result;
+using Terradue.OpenSearch.Benchmarking;
 
 namespace Terradue.OpenSearch.RdfEO.Extensions {
     /// <summary>
@@ -104,8 +105,12 @@ namespace Terradue.OpenSearch.RdfEO.Extensions {
                 rdfDoc = RdfXmlDocument.Load(reader);
 
                 rdfDoc.OpenSearchable = response.Entity;
-                rdfDoc.QueryTimeSpan = response.RequestTime;
-       
+                Metric requestTime = response.Metrics.FirstOrDefault(m => m.Identifier == "requestTime" && m.Value is double);
+                if (requestTime != null && response is OpenSearchResponse<byte[]>) rdfDoc.QueryTimeSpan = TimeSpan.FromMilliseconds((double)requestTime.Value);
+
+
+                //rdfDoc.QueryTimeSpan = response.RequestTime;
+
                 return rdfDoc;
             }
 
