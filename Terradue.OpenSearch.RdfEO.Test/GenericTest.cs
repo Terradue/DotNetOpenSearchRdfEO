@@ -6,7 +6,7 @@ namespace Terradue.OpenSearch.RdfEO.Test {
     [TestFixture]
     public class GenericTest {
 
-        [Test]
+        [Ignore]
         public void GenericOpenSearchableTest() {
 
             OpenSearchEngine ose = new OpenSearchEngine();

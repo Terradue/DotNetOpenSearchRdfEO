@@ -108,9 +108,6 @@ namespace Terradue.OpenSearch.RdfEO.Extensions {
                 Metric requestTime = response.Metrics.FirstOrDefault(m => m.Identifier == "requestTime" && m.Value is double);
                 if (requestTime != null && response is OpenSearchResponse<byte[]>) rdfDoc.QueryTimeSpan = TimeSpan.FromMilliseconds((double)requestTime.Value);
 
-
-                //rdfDoc.QueryTimeSpan = response.RequestTime;
-
                 return rdfDoc;
             }
 
